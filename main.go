@@ -33,6 +33,8 @@ func phaser(w http.ResponseWriter, req *http.Request) {
 }
 
 
+
+
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
