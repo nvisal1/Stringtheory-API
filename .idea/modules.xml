@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/guitarist.iml" filepath="$PROJECT_DIR$/.idea/guitarist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../stringtheory/.idea/stringtheory.iml" filepath="$PROJECT_DIR$/../stringtheory/.idea/stringtheory.iml" />
     </modules>
   </component>
 </project>

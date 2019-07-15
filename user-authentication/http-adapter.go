@@ -6,8 +6,10 @@ import (
 	"net/http"
 )
 
-func initializeAdapter() {
-	http.HandleFunc("/login", login)
+type moduleHttpAdapter struct{}
+
+func (mha moduleHttpAdapter) initializeAdapter() {
+	http.HandleFunc("/login", mha.login)
 }
 
 // login checks to ensure that the incoming request is a
@@ -26,31 +28,31 @@ func initializeAdapter() {
 // If no errors are returned from the generateToken function,
 // the variable of type UserToken is encoded and returned
 // to the client.
-func login(w http.ResponseWriter, req *http.Request) {
+func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodPost {
 		b, err := ioutil.ReadAll(req.Body)
 		defer req.Body.Close()
 		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), 500)
+			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 			return
 		}
 
-		var u LoginCredentials
+		var u loginCredentials
 		err = json.Unmarshal(b, &u)
 		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), 500)
+			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 			return
 		}
 
 		ut, err := generateToken(u)
 		if err != nil {
-			http.Error(w, http.StatusText(http.StatusUnauthorized) + " Invalid login credentials", http.StatusUnauthorized)
+			http.Error(w, http.StatusText(http.StatusUnauthorized) + " " + err.Error(), http.StatusUnauthorized)
 			return
 		}
 
 		e, err := json.Marshal(ut)
 		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), 500)
+			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 			return
 		}
 		w.Header().Set("content-type", "application/json")

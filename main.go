@@ -2,8 +2,12 @@ package main
 
 import (
 	"github.com/gorilla/websocket"
+	env "github.com/joho/godotenv"
 	"log"
 	"net/http"
+
+	database "stringtheory/drivers"
+	"stringtheory/user-authentication"
 )
 
 var clients = make(map[*websocket.Conn]bool)
@@ -12,6 +16,31 @@ var broadcast = make(chan Message)
 
 type Message struct {
 	Note string
+}
+
+
+// init is responsible for creating all of the necessary
+// components to run the service.
+//
+// This function starts by loading all of the
+// provided environment variables
+//
+// After the environment variables are loaded, this function
+// uses the service database connection
+// interface to establish a single connection.
+//
+// After the connection is established, this function initializes
+// all of its required service modules.
+//
+// The order of these operations are important because the
+// service modules ask the database connection interface for
+// for the connection. If the connection does not exist, then
+// the service will exit. The environment variables must be loaded first
+// because they are used when establishing a database connection.
+func init() {
+	env.Load()
+	database.Build()
+	user_authentication.InitializeModule()
 }
 
 func main() {
