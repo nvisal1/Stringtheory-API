@@ -23,52 +23,20 @@ import (
 //
 // If no errors are returned during this process, the function
 // returns an object of type UserToken
-func generateToken(lc loginCredentials) (userToken, error) {
-	key, exists := os.LookupEnv("KEY")
-	if exists {
-		u := sm.DataStore().getUser(lc.username)
-		bytePass := []byte(lc.password)
-		if comparePasswords(u.password, bytePass) {
-			tokenUser := secureUser{
-				username: u.username,
-				name:     u.name,
-				email:    u.email,
-			}
-			token := jwt.New(jwt.SigningMethodHS256)
-			token.Claims = jwt.MapClaims{
-				"exp":  time.Now().Add(time.Hour * 72).Unix(),
-				"iat":  time.Now().Unix(),
-				"user": tokenUser,
-			}
-			byteKey := []byte(key)
-			tokenString, err := token.SignedString(byteKey)
-			if err != nil {
-				return userToken{
-					token: nil,
-				}, err
-			}
-			return userToken{
-				tokenString,
-			}, nil
-		}
+func processLogin(lc loginCredentials) (userToken, error) {
+	u := sm.DataStore().getUser(lc.username)
+	bytePass := []byte(lc.password)
+	if comparePasswords(u.password, bytePass) {
+
+
+
 		return userToken{
-			nil,
-		}, errors.New("Password is incorrect")
+			tokenString,
+		}, nil
 	}
 	return userToken{
 		nil,
-	}, errors.New("Key is not set correctly")
+	}, errors.New("Password is incorrect")
+
 }
 
-
-// comparePasswords is responsible for comparing
-// the user's plaintext password to
-// the hashed password
-func comparePasswords(hashedPwd string, plainPwd []byte) bool {
-	byteHash := []byte(hashedPwd)
-	err := bcrypt.CompareHashAndPassword(byteHash, plainPwd)
-	if err != nil {
-		return false
-	}
-	return true
-}

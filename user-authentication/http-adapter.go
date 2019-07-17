@@ -10,6 +10,7 @@ type moduleHttpAdapter struct{}
 
 func (mha moduleHttpAdapter) initializeAdapter() {
 	http.HandleFunc("/login", mha.login)
+	http.HandleFunc("/register", mha.register)
 }
 
 // login checks to ensure that the incoming request is a
@@ -59,6 +60,22 @@ func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 		w.Write(e)
 	} else {
 		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a POST request to this endpoint", http.StatusNotFound)
+		return
+	}
+}
+
+func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) {
+	b, err := ioutil.ReadAll(req.Body)
+	defer req.Body.Close()
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var u newUser
+	err = json.Unmarshal(b, &u)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 }

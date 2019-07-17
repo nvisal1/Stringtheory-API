@@ -1,13 +1,8 @@
-package user_authentication
+package user_management
 
-import (
-	"context"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-	"log"
-)
+import "go.mongodb.org/mongo-driver/mongo"
 
-type moduleMongoDataStore struct{
+type moduleMongoDataStore struct {
 	db *mongo.Database
 }
 
