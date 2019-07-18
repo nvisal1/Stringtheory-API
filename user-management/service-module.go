@@ -1,5 +1,7 @@
 package user_management
 
+import "log"
+
 type serviceModule struct {
 	ha httpAdapter
 	ds dataStore

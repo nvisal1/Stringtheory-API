@@ -2,10 +2,7 @@ package user_authentication
 
 import (
 	"errors"
-	"github.com/dgrijalva/jwt-go"
-	"golang.org/x/crypto/bcrypt"
-	"os"
-	"time"
+	"stringtheory/shared"
 )
 
 // generateToken accepts an object u of type LoginCredentials.
@@ -24,19 +21,49 @@ import (
 // If no errors are returned during this process, the function
 // returns an object of type UserToken
 func processLogin(lc loginCredentials) (userToken, error) {
-	u := sm.DataStore().getUser(lc.username)
-	bytePass := []byte(lc.password)
-	if comparePasswords(u.password, bytePass) {
-
-
+	u, err := getUser(lc.username)
+	if err != nil {
+		return userToken{
+			nil,
+		}, errors.New("Username is incorrect")
+	}
+	if comparePasswords(u.Password, lc.password) {
+		su := shared.SecureUser{
+			Username: u.Username,
+			Email: u.Email,
+			Name: u.Name,
+		}
+		token, err := generateToken(su)
+		if err != nil {
+			return userToken{
+				nil,
+			}, err
+		}
 
 		return userToken{
-			tokenString,
+			token,
 		}, nil
 	}
 	return userToken{
 		nil,
 	}, errors.New("Password is incorrect")
-
 }
 
+
+func processRegistration(nu newUser) (userToken, error) {
+	_, err := getUser(nu.username)
+	// If err, then user does not exist for given username
+	if err != nil {
+		hp, err := encryptPassword(nu.password)
+		if err != nil {
+			return userToken{
+				nil,
+			}, err
+		}
+		nu.password = hp
+
+	}
+	return userToken{
+		nil,
+	}, errors.New("A user with this username already exists")
+}

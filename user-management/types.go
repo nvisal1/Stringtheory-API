@@ -1,20 +1,9 @@
 package user_management
 
-type user struct {
-	username string
-	name string
-	email string
-	password string
-}
-
-type secureUser struct {
-	username string
-	name string
-	email string
-}
+import "stringtheory/shared"
 
 type dataStore interface {
-	getUser(un string) user
+	getUser(un string) (shared.User, error)
 }
 
 type httpAdapter interface {

@@ -1,5 +1,7 @@
 package user_management
 
+import "stringtheory/shared"
+
 // register accepts an object nu of type newUser.
 // The function checks to ensure that a user with
 // the same username or email does not exist.
@@ -12,4 +14,9 @@ package user_management
 // a token for the new user.
 func register(nu newUser) (userToken, error) {
 
+}
+
+func getUser(un string) (shared.User, error) {
+	u, err := sm.ds.getUser(un)
+	return u, err
 }
