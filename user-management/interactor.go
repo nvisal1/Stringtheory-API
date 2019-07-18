@@ -1,6 +1,9 @@
 package user_management
 
-import "stringtheory/shared"
+import (
+	"errors"
+	"stringtheory/shared"
+)
 
 // register accepts an object nu of type newUser.
 // The function checks to ensure that a user with
@@ -17,6 +20,14 @@ func register(nu newUser) (userToken, error) {
 }
 
 func getUser(un string) (shared.User, error) {
-	u, err := sm.ds.getUser(un)
+	u, err := sm.DataStore().getUser(un)
 	return u, err
+}
+
+func createUser(u shared.User) error {
+	err := sm.DataStore().createUser(u)
+	if err != nil {
+		return errors.New("User could not be created")
+	}
+	return nil
 }

@@ -4,6 +4,7 @@ import "stringtheory/shared"
 
 type dataStore interface {
 	getUser(un string) (shared.User, error)
+	createUser(u shared.User) error
 }
 
 type httpAdapter interface {

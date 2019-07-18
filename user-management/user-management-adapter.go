@@ -16,6 +16,11 @@ func (uma userManagementAdapter) GetUser(un string) (shared.User, error) {
 	return u, err
 }
 
+func (uma userManagementAdapter) CreateUser(u shared.User) error {
+	err := createUser(u)
+	return err
+}
+
 func Open() {
 	once.Do(func() {
 		instance = userManagementAdapter{}
@@ -28,3 +33,4 @@ func GetInstance() userManagementAdapter {
 	}
 	return instance
 }
+

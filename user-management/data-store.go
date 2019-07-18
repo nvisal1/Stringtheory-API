@@ -28,14 +28,9 @@ func (mmds moduleMongoDataStore) getUser(un string) (shared.User, error) {
 }
 
 func (mmds moduleMongoDataStore) createUser(u shared.User) error {
-	filter := bson.D{{"username", un}}
-
-	err := mmds.db.Collection("Users").FindOne(context.TODO(), filter).Decode(&result)
+	_, err := mmds.db.Collection("Users").InsertOne(context.TODO(), u)
 	if err != nil {
-		if err == mongo.ErrNoDocuments {
-			return result, err
-		}
-		log.Fatal(err)
+		return err
 	}
-	return result, nil
+	return nil
 }

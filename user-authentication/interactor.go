@@ -50,18 +50,37 @@ func processLogin(lc loginCredentials) (userToken, error) {
 }
 
 
-func processRegistration(nu newUser) (userToken, error) {
-	_, err := getUser(nu.username)
+func processRegistration(u shared.User) (userToken, error) {
+	_, err := getUser(u.Username)
 	// If err, then user does not exist for given username
 	if err != nil {
-		hp, err := encryptPassword(nu.password)
+		hp, err := encryptPassword(u.Password)
 		if err != nil {
 			return userToken{
 				nil,
 			}, err
 		}
-		nu.password = hp
-
+		u.Password = hp
+		err = createUser(u)
+		if err != nil {
+			return userToken{
+				nil,
+			}, err
+		}
+		su := shared.SecureUser{
+			Username: u.Username,
+			Email: u.Email,
+			Name: u.Name,
+		}
+		token, err := generateToken(su)
+		if err != nil {
+			return userToken{
+				nil,
+			}, err
+		}
+		return userToken{
+			token,
+		}, nil
 	}
 	return userToken{
 		nil,
