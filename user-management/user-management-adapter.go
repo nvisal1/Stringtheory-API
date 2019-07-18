@@ -21,7 +21,7 @@ func (uma userManagementAdapter) CreateUser(u shared.User) error {
 	return err
 }
 
-func Open() {
+func OpenInternalAdapter() {
 	once.Do(func() {
 		instance = userManagementAdapter{}
 	})

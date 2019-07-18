@@ -5,6 +5,7 @@ import (
 	env "github.com/joho/godotenv"
 	"log"
 	"net/http"
+	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
 	"stringtheory/user-authentication"
@@ -41,6 +42,8 @@ func init() {
 	env.Load()
 	database.Build()
 	user_authentication.InitializeModule()
+	user_management.InitializeModule()
+	user_management.OpenInternalAdapter()
 }
 
 func main() {
