@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"stringtheory/shared"
 )
 
 type moduleHttpAdapter struct{}
@@ -45,7 +46,7 @@ func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 
-		ut, err := generateToken(u)
+		ut, err := processLogin(u)
 		if err != nil {
 			http.Error(w, http.StatusText(http.StatusUnauthorized) + " " + err.Error(), http.StatusUnauthorized)
 			return
@@ -72,10 +73,25 @@ func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) 
 		return
 	}
 
-	var u newUser
+	var u shared.User
 	err = json.Unmarshal(b, &u)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
+
+	ut, err := processRegistration(u)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusBadRequest) + " " + err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	e, err := json.Marshal(ut)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("content-type", "application/json")
+	w.Write(e)
 }
