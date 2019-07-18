@@ -66,32 +66,37 @@ func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) {
-	b, err := ioutil.ReadAll(req.Body)
-	defer req.Body.Close()
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
+	if req.Method == http.MethodPost {
+		b, err := ioutil.ReadAll(req.Body)
+		defer req.Body.Close()
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		var u shared.User
+		err = json.Unmarshal(b, &u)
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		ut, err := processRegistration(u)
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusBadRequest)+" "+err.Error(), http.StatusBadRequest)
+			return
+		}
+
+		e, err := json.Marshal(ut)
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("content-type", "application/json")
+		w.Write(e)
+	} else {
+		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a POST request to this endpoint", http.StatusNotFound)
 		return
 	}
-
-	var u shared.User
-	err = json.Unmarshal(b, &u)
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	ut, err := processRegistration(u)
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusBadRequest) + " " + err.Error(), http.StatusBadRequest)
-		return
-	}
-
-	e, err := json.Marshal(ut)
-	if err != nil {
-		http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	w.Header().Set("content-type", "application/json")
-	w.Write(e)
 }
