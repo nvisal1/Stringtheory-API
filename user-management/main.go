@@ -1,6 +1,9 @@
 package user_management
 
-import "os"
+import (
+	"os"
+	database "stringtheory/drivers"
+)
 
 var sm serviceModule
 
@@ -14,7 +17,13 @@ func InitializeModule() {
 	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
 	if exists {
 		sm = serviceModule{
-
+			ha: moduleHttpAdapter{},
+			ds: moduleMongoDataStore {
+				database.GetConnection().Db,
+			},
+			tds: stubMongoDataStore{},
+			se: se,
 		}
+		sm.ha.initializeAdapter()
 	}
 }

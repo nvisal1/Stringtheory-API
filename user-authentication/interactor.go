@@ -49,7 +49,16 @@ func processLogin(lc loginCredentials) (userToken, error) {
 	}, errors.New("Password is incorrect")
 }
 
-
+// register accepts an object nu of type newUser.
+// The function checks to ensure that a user with
+// the same username or email does not exist.
+// If no error is thrown, the function will use
+// the bcrypt package to hash the given password.
+// The new user is saved with the hashed password.
+//
+// Finally, this function reaches out to the
+// user-authentication module to retrieve
+// a token for the new user.
 func processRegistration(u shared.User) (userToken, error) {
 	_, err := getUser(u.Username)
 	// If err, then user does not exist for given username
