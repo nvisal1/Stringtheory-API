@@ -2,18 +2,22 @@ package courses
 
 type stubMongoDataStore struct {}
 
-func (mmds stubMongoDataStore) getAllCourses() ([]course, error) {
-	s := make([]string, 3)
+func (smds stubMongoDataStore) getAllCourses() ([]course, error) {
 	courses := make([]course, 1)
-	sum := summary {
+	c := course{
 		"test",
 		"test",
 		"test",
 	}
-	u := course{
-		sum,
-		s,
-	}
-	res := append(courses, u)
+	res := append(courses, c)
 	return res, nil
+}
+
+func (smds stubMongoDataStore) getCourse(cI string) (course, error) {
+	c := course{
+		"test",
+		"test",
+		"test",
+	}
+	return c, nil
 }

@@ -11,7 +11,8 @@ type exercise struct {
 }
 
 type dataStore interface {
-	getLessonExercises(lE []string) ([]exercise, error)
+	getLessonExercises(lI string) ([]exercise, error)
+	getExercise(eI string) (exercise, error)
 }
 
 type httpAdapter interface {
