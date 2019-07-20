@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"stringtheory/courses"
 	"stringtheory/exercises"
+	"stringtheory/lessons"
 	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
@@ -45,6 +46,7 @@ func init() {
 	database.Build()
 	courses.InitializeModule()
 	exercises.InitializeModule()
+	lessons.InitializeModule()
 	user_authentication.InitializeModule()
 	user_management.InitializeModule()
 	user_management.OpenInternalAdapter()
