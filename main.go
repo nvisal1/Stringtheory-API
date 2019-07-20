@@ -5,6 +5,7 @@ import (
 	env "github.com/joho/godotenv"
 	"log"
 	"net/http"
+	"stringtheory/courses"
 	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
@@ -41,6 +42,7 @@ type Message struct {
 func init() {
 	env.Load()
 	database.Build()
+	courses.InitializeModule()
 	user_authentication.InitializeModule()
 	user_management.InitializeModule()
 	user_management.OpenInternalAdapter()

@@ -1,9 +1,9 @@
-package user_authentication
+package courses
 
 import (
-"os"
+	"os"
+	database "stringtheory/drivers"
 )
-
 
 var sm serviceModule
 
@@ -18,6 +18,10 @@ func InitializeModule() {
 	if exists {
 		sm = serviceModule{
 			moduleHttpAdapter{},
+			moduleMonogDataStore{
+				database.GetConnection().Db,
+			},
+			stubMongoDataStore{},
 			se,
 		}
 		sm.ha.initializeAdapter()
