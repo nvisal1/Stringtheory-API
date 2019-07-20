@@ -8,6 +8,7 @@ import (
 	"stringtheory/courses"
 	"stringtheory/exercises"
 	"stringtheory/lessons"
+	user_curriculum_progress "stringtheory/user-curriculum-progress"
 	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
@@ -48,6 +49,7 @@ func init() {
 	exercises.InitializeModule()
 	lessons.InitializeModule()
 	user_authentication.InitializeModule()
+	user_curriculum_progress.InitializeModule()
 	user_management.InitializeModule()
 	user_management.OpenInternalAdapter()
 }
