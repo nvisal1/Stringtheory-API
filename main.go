@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"stringtheory/courses"
+	"stringtheory/exercises"
 	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
@@ -43,6 +44,7 @@ func init() {
 	env.Load()
 	database.Build()
 	courses.InitializeModule()
+	exercises.InitializeModule()
 	user_authentication.InitializeModule()
 	user_management.InitializeModule()
 	user_management.OpenInternalAdapter()
