@@ -5,6 +5,7 @@ import "time"
 func completeCourse(uI string, cI string) error {
 	// get course to verify existence
 
+
 	// get user to verify existence
 
 	// make sure that the user hasn't completed the course already

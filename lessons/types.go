@@ -1,17 +1,10 @@
 package lessons
 
-type lesson struct {
-	id string
-	name string
-	order int
-	description string
-	courseId string
-	hasNext bool
-}
+import "stringtheory/shared"
 
 type dataStore interface {
-	getCourseLessons(cI string) ([]lesson, error)
-	getLesson(lI string) (lesson, error)
+	getCourseLessons(cI string) ([]shared.Lesson, error)
+	getLesson(lI string) (shared.Lesson, error)
 }
 
 type httpAdapter interface {
