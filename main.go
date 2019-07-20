@@ -46,6 +46,7 @@ func init() {
 	env.Load()
 	database.Build()
 	courses.InitializeModule()
+	courses.OpenInternalAdapter()
 	exercises.InitializeModule()
 	lessons.InitializeModule()
 	lessons.OpenInternalAdapter()

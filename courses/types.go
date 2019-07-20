@@ -1,18 +1,14 @@
 package courses
 
-type summary struct {
+type course struct {
 	id string
 	name string
 	description string
 }
 
-type course struct {
-	summary
-	lessons []string
-}
-
 type dataStore interface {
 	getAllCourses() ([]course, error)
+	getCourse(cI string) (course, error)
 }
 
 type httpAdapter interface {

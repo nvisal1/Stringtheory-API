@@ -8,3 +8,7 @@ func loadAllCourses() ([]course, error) {
 	return c, nil
 }
 
+func loadCourse(cI string) (course, error) {
+	c, err := sm.DataStore().getCourse(cI)
+	return c, err
+}

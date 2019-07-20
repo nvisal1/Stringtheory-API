@@ -30,3 +30,18 @@ func (mmds moduleMonogDataStore) getAllCourses() ([]course, error) {
 	}
 	return result, nil
 }
+
+func (mmds moduleMonogDataStore) getCourse(cI string) (course, error) {
+	var result course
+
+	filter := bson.D{{"_id", cI}}
+
+	err := mmds.db.Collection("Courses").FindOne(context.TODO(), filter).Decode(&result)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return result, err
+		}
+		log.Fatal(err)
+	}
+	return result, nil
+}
