@@ -29,7 +29,7 @@ func OpenInternalAdapter() {
 
 func GetInstance() userManagementAdapter {
 	if instance.GetUser == nil {
-		log.Fatal("User Management Module has not been created")
+		log.Fatal("User Management Adapter has not been created")
 	}
 	return instance
 }

@@ -48,6 +48,7 @@ func init() {
 	courses.InitializeModule()
 	exercises.InitializeModule()
 	lessons.InitializeModule()
+	lessons.OpenInternalAdapter()
 	user_authentication.InitializeModule()
 	user_curriculum_progress.InitializeModule()
 	user_management.InitializeModule()

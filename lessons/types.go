@@ -3,12 +3,15 @@ package lessons
 type lesson struct {
 	id string
 	name string
-	exercises []string
+	order int
 	description string
+	courseId string
+	hasNext bool
 }
 
 type dataStore interface {
-	getCourseLessons(cL []string) ([]lesson, error)
+	getCourseLessons(cI string) ([]lesson, error)
+	getLesson(lI string) (lesson, error)
 }
 
 type httpAdapter interface {

@@ -33,6 +33,9 @@ func completeLesson(uI string, lI string) error {
 
 	err := sm.DataStore().createCompletedLesson(cL)
 	return err
+
+	// check if all lessons were completed
+	// if yes - complete course
 }
 
 func completeExercise(uI string, eI string, score float64) error {
@@ -49,4 +52,7 @@ func completeExercise(uI string, eI string, score float64) error {
 
 	err := sm.DataStore().createCompletedExercise(cE)
 	return err
+
+	// Check if all exercises were completed
+	// if yes - complete lesson
 }

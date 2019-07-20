@@ -11,15 +11,12 @@ type moduleMongoDataStore struct {
 	db *mongo.Database
 }
 
-func (mmds moduleMongoDataStore) getCourseLessons(cL []string) ([]lesson, error) {
+func (mmds moduleMongoDataStore) getCourseLessons(cI string) ([]lesson, error) {
 	var result []lesson
 
 	filter := bson.D{{
-		"_id",
-		bson.D{{
-			"$in",
-			bson.A{cL},
-		}},
+		"courseId",
+		cI,
 	}}
 
 	cur, err := mmds.db.Collection("Lessons").Find(context.TODO(), filter)
@@ -36,3 +33,19 @@ func (mmds moduleMongoDataStore) getCourseLessons(cL []string) ([]lesson, error)
 	}
 	return result, nil
 }
+
+func (mmds moduleMongoDataStore) getLesson(lI string) (lesson, error) {
+	var result lesson
+
+	filter := bson.D{{"_id", lI}}
+
+	err := mmds.db.Collection("Lessons").FindOne(context.TODO(), filter).Decode(&result)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return result, err
+		}
+		log.Fatal(err)
+	}
+	return result, nil
+}
+
