@@ -3,19 +3,19 @@ package user_curriculum_progress
 import "time"
 
 type completedCourse struct {
-	userId string
+	username string
 	courseId string
 	date time.Time
 }
 
 type completedLesson struct {
-	userId string
+	username string
 	lessonId string
 	date time.Time
 }
 
 type completedExercise struct {
-	userId string
+	username string
 	exerciseId string
 	date time.Time
 	score float64

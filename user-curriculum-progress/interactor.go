@@ -2,58 +2,95 @@ package user_curriculum_progress
 
 import "time"
 
-func completeCourse(uI string, cI string) error {
+func completeCourse(uN string, cI string) error {
 	// get course to verify existence
-
-
+    _, err := getCourse(cI)
+    if err != nil {
+    	return err
+	}
 	// get user to verify existence
-
+	_, err = getUser(uN)
+	if err != nil {
+		return err
+	}
 	// make sure that the user hasn't completed the course already
 
+
 	cC := completedCourse{
-		uI,
+		uN,
 		cI,
 		time.Now(),
 	}
-	err := sm.DataStore().createCompletedCourse(cC)
+	err = sm.DataStore().createCompletedCourse(cC)
 	return err
 }
 
-func completeLesson(uI string, lI string) error {
+func completeLesson(uN string, lI string) error {
 	// get lesson to verify existence
-
+	l, err := getLesson(lI)
+	if err != nil {
+		return err
+	}
 	// get user to verify existence
-
+	_, err = getUser(uN)
+	if err != nil {
+		return err
+	}
 	// make sure that the user hasn't completed the lesson already
 
 	cL := completedLesson{
-		uI,
+		uN,
 		lI,
 		time.Now(),
 	}
 
-	err := sm.DataStore().createCompletedLesson(cL)
-	return err
+	err = sm.DataStore().createCompletedLesson(cL)
+	if err != nil {
+		return err
+	}
 
 	// check if all lessons were completed
 	// if yes - complete course
+	if !l.HasNext {
+		err = completeCourse(uN, l.CourseId)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
-func completeExercise(uI string, eI string, score float64) error {
+func completeExercise(uN string, eI string, score float64) error {
 	// get exercise to verify existence
-
+	e, err := getExercise(eI)
+	if err != nil {
+		return err
+	}
 	// get user to verify existence
+	_, err = getUser(uN)
+	if err != nil {
+		return err
+	}
 
 	cE := completedExercise{
-		uI,
+		uN,
 		eI,
 		time.Now(),
 		score,
 	}
 
-	err := sm.DataStore().createCompletedExercise(cE)
-	return err
+	err = sm.DataStore().createCompletedExercise(cE)
+	if err != nil {
+		return err
+	}
 
 	// Check if all exercises were completed
 	// if yes - complete lesson
+	if !e.HasNext {
+		err = completeLesson(uN, e.LessonId)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
