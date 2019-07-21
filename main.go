@@ -1,28 +1,19 @@
 package main
 
 import (
-	"github.com/gorilla/websocket"
 	env "github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"stringtheory/courses"
 	"stringtheory/exercises"
+	guitar_interaction "stringtheory/guitar-interaction"
 	"stringtheory/lessons"
+	user_authentication "stringtheory/user-authentication"
 	user_curriculum_progress "stringtheory/user-curriculum-progress"
 	user_management "stringtheory/user-management"
 
 	database "stringtheory/drivers"
-	"stringtheory/user-authentication"
 )
-
-var clients = make(map[*websocket.Conn]bool)
-var broadcast = make(chan Message)
-
-
-type Message struct {
-	Note string
-}
-
 
 // init is responsible for creating all of the necessary
 // components to run the service.
@@ -45,26 +36,30 @@ type Message struct {
 func init() {
 	env.Load()
 	database.Build()
+	initializeServiceModules()
+	openInternalServiceAdapters()
+}
+
+func initializeServiceModules() {
 	courses.InitializeModule()
-	courses.OpenInternalAdapter()
 	exercises.InitializeModule()
-	exercises.OpenInternalAdapter()
+	guitar_interaction.InitializeModule()
 	lessons.InitializeModule()
-	lessons.OpenInternalAdapter()
 	user_authentication.InitializeModule()
 	user_curriculum_progress.InitializeModule()
 	user_management.InitializeModule()
+}
+
+func openInternalServiceAdapters() {
+	courses.OpenInternalAdapter()
+	exercises.OpenInternalAdapter()
+	lessons.OpenInternalAdapter()
 	user_management.OpenInternalAdapter()
 }
 
 func main() {
-	hub := newHub()
-	go hub.run()
 	http.Handle("/phaser/", http.StripPrefix("/phaser", http.FileServer(http.Dir("./phaser/app"))))
 	http.HandleFunc("/phaser/play", phaser)
-	http.HandleFunc("/record", func(w http.ResponseWriter, r *http.Request) {
-		serveWs(hub, w, r)
-	})
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal(err)

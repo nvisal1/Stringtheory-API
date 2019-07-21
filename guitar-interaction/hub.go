@@ -1,4 +1,5 @@
-package main
+package guitar_interaction
+
 
 type Hub struct {
 	clients map[*Client]bool
