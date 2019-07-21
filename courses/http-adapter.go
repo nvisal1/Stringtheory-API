@@ -3,6 +3,7 @@ package courses
 import (
 	"encoding/json"
 	"net/http"
+	"stringtheory/shared"
 )
 
 type moduleHttpAdapter struct {}
@@ -11,7 +12,7 @@ type moduleHttpAdapter struct {}
 // The function is responsible for setting http routes
 // for this module
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/courses", mha.getCourses)
+	http.HandleFunc("/courses", shared.Authenticate()(mha.getCourses))
 	http.HandleFunc("/courses/:courseId", mha.getCourse)
 }
 

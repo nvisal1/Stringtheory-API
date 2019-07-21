@@ -5,14 +5,15 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"log"
+	"stringtheory/shared"
 )
 
 type moduleMongoDataStore struct {
 	db *mongo.Database
 }
 
-func (mmds moduleMongoDataStore) getLessonExercises(lI string) ([]exercise, error) {
-	var result []exercise
+func (mmds moduleMongoDataStore) getLessonExercises(lI string) ([]shared.Exercise, error) {
+	var result []shared.Exercise
 
 	filter := bson.D{{
 		"_id",
@@ -34,8 +35,8 @@ func (mmds moduleMongoDataStore) getLessonExercises(lI string) ([]exercise, erro
 	return result, nil
 }
 
-func (mmds moduleMongoDataStore) getExercise(eI string) (exercise, error) {
-	var result exercise
+func (mmds moduleMongoDataStore) getExercise(eI string) (shared.Exercise, error) {
+	var result shared.Exercise
 
 	filter := bson.D{{"_id", eI}}
 

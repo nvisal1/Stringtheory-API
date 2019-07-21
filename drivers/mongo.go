@@ -24,6 +24,9 @@ func (mc MongoConnection) Disconnect() {
 	}
 }
 
+// Build is a wrapper for the connect function.
+// This function ensures the integrity of the
+// the singleton instance
 func Build() {
 	once.Do(func() {
 		db, client := connect()
@@ -34,6 +37,11 @@ func Build() {
 	})
 }
 
+// GetConnection is an exported function
+// that allows service modules to use
+// the current instance of the database.
+// If this function is called before Build,
+// an error will be thrown
 func GetConnection() MongoConnection {
 	if instance.Db == nil {
 		log.Fatal("Database connection has not been established")
@@ -42,6 +50,8 @@ func GetConnection() MongoConnection {
 	return instance
 }
 
+// connect is responsible for establishing
+// a connection with MongoDB
 func connect() (*mongo.Database, *mongo.Client) {
 	mongoURI, exists := os.LookupEnv("MONGO_URI")
 	if exists {
