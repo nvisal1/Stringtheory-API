@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"stringtheory/courses"
+	"stringtheory/courses/adapters"
 	"stringtheory/exercises"
 	"stringtheory/game"
 	guitar_interaction "stringtheory/guitar-interaction"
@@ -53,7 +54,7 @@ func initializeServiceModules() {
 }
 
 func openInternalServiceAdapters() {
-	courses.OpenInternalAdapter()
+	adapters.OpenInternalAdapter()
 	exercises.OpenInternalAdapter()
 	lessons.OpenInternalAdapter()
 	user_management.OpenInternalAdapter()

@@ -1,11 +1,11 @@
 package lessons
 
 import (
-	"stringtheory/courses"
+	"stringtheory/courses/adapters"
 	"stringtheory/shared"
 )
 
 func getCourse(cI string) (shared.Course, error) {
-	c, err := courses.GetInstance().LoadCourse(cI)
+	c, err := adapters.GetInstance().LoadCourse(cI)
 	return c, err
 }

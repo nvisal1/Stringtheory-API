@@ -2,6 +2,7 @@ package courses
 
 import (
 	"log"
+	"stringtheory/shared"
 	"sync"
 )
 
@@ -10,12 +11,12 @@ type coursesAdapter struct {}
 var instance coursesAdapter
 var once sync.Once
 
-func (ca coursesAdapter) LoadAllCourses() ([]course, error) {
+func (ca coursesAdapter) LoadAllCourses() ([]shared.Course, error) {
 	c, err := loadAllCourses()
 	return c, err
 }
 
-func (ca coursesAdapter) LoadCourse(cI string) (course, error) {
+func (ca coursesAdapter) LoadCourse(cI string) (shared.Course, error) {
 	c, err := loadCourse(cI)
 	return c, err
 }

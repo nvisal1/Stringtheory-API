@@ -9,73 +9,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/main.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="588">
-                  <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#14#365#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/game/main.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/guitar-interaction/main.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/guitar-interaction/hub.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/guitar-interaction/client.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-679">
-                  <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../stringtheory/game/http-adapter.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../stringtheory/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+              <folding>
+                <element signature="e#14#365#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../stringtheory/courses/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../stringtheory/courses/http-adapter.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../stringtheory/courses/courses-adapter.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,10 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../stringtheory/user-authentication/main.go" />
-        <option value="$PROJECT_DIR$/../stringtheory/courses/service-module.go" />
-        <option value="$PROJECT_DIR$/../stringtheory/courses/main.go" />
-        <option value="$PROJECT_DIR$/../stringtheory/user-management/test-data-store.go" />
         <option value="$PROJECT_DIR$/../stringtheory/courses/http-adapter.go" />
         <option value="$PROJECT_DIR$/../stringtheory/exercises/service-module.go" />
         <option value="$PROJECT_DIR$/../stringtheory/exercises/main.go" />
@@ -117,7 +87,6 @@
         <option value="$PROJECT_DIR$/../stringtheory/user-management/user-management-adapter.go" />
         <option value="$PROJECT_DIR$/../stringtheory/lessons/lessons.adapter.go" />
         <option value="$PROJECT_DIR$/../stringtheory/courses/interactor.go" />
-        <option value="$PROJECT_DIR$/../stringtheory/courses/courses-adapter.go" />
         <option value="$PROJECT_DIR$/../stringtheory/courses/test-data-store.go" />
         <option value="$PROJECT_DIR$/../stringtheory/exercises/data-store.go" />
         <option value="$PROJECT_DIR$/../stringtheory/exercises/interactor.go" />
@@ -147,6 +116,11 @@
         <option value="$PROJECT_DIR$/../stringtheory/phaser/http-adapter.go" />
         <option value="$PROJECT_DIR$/../stringtheory/game/main.go" />
         <option value="$PROJECT_DIR$/../stringtheory/main.go" />
+        <option value="$PROJECT_DIR$/../stringtheory/courses/adapters/http-adapter.go" />
+        <option value="$PROJECT_DIR$/../stringtheory/courses/adapters/courses-adapter.go" />
+        <option value="$PROJECT_DIR$/../stringtheory/courses/main.go" />
+        <option value="$PROJECT_DIR$/../stringtheory/courses/courses-adapter.go" />
+        <option value="$PROJECT_DIR$/../stringtheory/Dockerfile" />
       </list>
     </option>
   </component>
@@ -168,6 +142,11 @@
             <path>
               <item name="stringtheory" type="b2602c69:ProjectViewProjectNode" />
               <item name="stringtheory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stringtheory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stringtheory" type="462c0819:PsiDirectoryNode" />
+              <item name="courses" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -200,11 +179,11 @@
       <recent name="$PROJECT_DIR$/../stringtheory/courses" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../stringtheory/guitar-interaction" />
       <recent name="$PROJECT_DIR$/../stringtheory" />
+      <recent name="$PROJECT_DIR$/../stringtheory/courses" />
+      <recent name="$PROJECT_DIR$/../stringtheory/courses/adapters" />
+      <recent name="$PROJECT_DIR$/../stringtheory/guitar-interaction" />
       <recent name="$PROJECT_DIR$/../stringtheory/shared" />
-      <recent name="$PROJECT_DIR$/user-authentication" />
-      <recent name="$PROJECT_DIR$/phaser" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -276,7 +255,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17216118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17216118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -289,7 +268,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.16020408" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22040816" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -322,13 +301,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../stringtheory/exercises/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../stringtheory/exercises/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -453,26 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/http-adapter.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding>
-            <element signature="e#17#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/courses-adapter.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <element signature="e#17#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../stringtheory/courses/interactor.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -484,16 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#17#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,11 +661,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../stringtheory/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        <state relative-caret-position="690">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
           <folding>
             <element signature="e#14#365#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/courses-adapter.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stringtheory/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stringtheory/courses/http-adapter.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
