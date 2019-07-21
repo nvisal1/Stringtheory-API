@@ -10,6 +10,12 @@ type exercisesAdapter struct {}
 var instance exercisesAdapter
 var once sync.Once
 
+func (ea exercisesAdapter) InitializeAdapter() {
+	once.Do(func() {
+		instance = exercisesAdapter{}
+	})
+}
+
 func (ea exercisesAdapter) LoadLessonExercises(lI string) ([]exercise, error) {
 	e, err := loadLessonExercises(lI)
 	return e, err
@@ -18,12 +24,6 @@ func (ea exercisesAdapter) LoadLessonExercises(lI string) ([]exercise, error) {
 func (ea exercisesAdapter) LoadExercise(eI string) (exercise, error) {
 	e, err := loadExercise(eI)
 	return e, err
-}
-
-func OpenInternalAdapter() {
-	once.Do(func() {
-		instance = exercisesAdapter{}
-	})
 }
 
 func GetInstance() exercisesAdapter {

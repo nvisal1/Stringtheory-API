@@ -18,13 +18,15 @@ func InitializeModule() {
 	if exists {
 		sm = serviceModule{
 			ha: moduleHttpAdapter{},
+			ia: lessonsAdapter{},
 			ds: moduleMongoDataStore {
 				database.GetConnection().Db,
 			},
 			tds: stubMongoDataStore{},
 			se: se,
 		}
-		sm.ha.initializeAdapter()
+		sm.ha.InitializeAdapter()
+		sm.ia.InitializeAdapter()
 	}
 }
 

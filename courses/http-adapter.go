@@ -7,7 +7,7 @@ import (
 
 type moduleHttpAdapter struct {}
 
-func (mha moduleHttpAdapter) initializeAdapter() {
+func (mha moduleHttpAdapter) InitializeAdapter() {
 	http.HandleFunc("/courses", mha.getCourses)
 	http.HandleFunc("/courses/:courseId", mha.getCourse)
 }

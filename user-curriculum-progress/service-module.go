@@ -1,9 +1,12 @@
 package user_curriculum_progress
 
-import "log"
+import (
+	"log"
+	"stringtheory/shared"
+)
 
 type serviceModule struct {
-	ha httpAdapter
+	ha shared.Adapter
 	ds dataStore
 	tds dataStore
 	se string

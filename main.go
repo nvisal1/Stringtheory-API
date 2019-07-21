@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"stringtheory/courses"
-	"stringtheory/courses/adapters"
 	"stringtheory/exercises"
 	"stringtheory/game"
 	guitar_interaction "stringtheory/guitar-interaction"
@@ -28,9 +27,9 @@ import (
 // interface to establish a single connection.
 //
 // After the connection is established, this function initializes
-// all of its required service modules.
+// all required service modules
 //
-// The order of these operations are important because the
+// The order of these operations is important because the
 // service modules ask the database connection interface for
 // for the connection. If the connection does not exist, then
 // the service will exit. The environment variables must be loaded first
@@ -39,9 +38,12 @@ func init() {
 	env.Load()
 	database.Build()
 	initializeServiceModules()
-	openInternalServiceAdapters()
 }
 
+// initializeServiceModules calls the InitializeModule function
+// for every required service module. Module functionality
+// will not be available unless its InitializeModule function
+// is called.
 func initializeServiceModules() {
 	courses.InitializeModule()
 	exercises.InitializeModule()
@@ -51,13 +53,6 @@ func initializeServiceModules() {
 	user_authentication.InitializeModule()
 	user_curriculum_progress.InitializeModule()
 	user_management.InitializeModule()
-}
-
-func openInternalServiceAdapters() {
-	adapters.OpenInternalAdapter()
-	exercises.OpenInternalAdapter()
-	lessons.OpenInternalAdapter()
-	user_management.OpenInternalAdapter()
 }
 
 func main() {

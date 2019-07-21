@@ -9,7 +9,7 @@ import (
 
 type moduleHttpAdapter struct{}
 
-func (mha moduleHttpAdapter) initializeAdapter() {
+func (mha moduleHttpAdapter) InitializeAdapter() {
 	http.HandleFunc("/login", mha.login)
 	http.HandleFunc("/register", mha.register)
 }

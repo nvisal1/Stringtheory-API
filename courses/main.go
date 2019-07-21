@@ -18,12 +18,14 @@ func InitializeModule() {
 	if exists {
 		sm = serviceModule{
 			moduleHttpAdapter{},
+			coursesAdapter{},
 			moduleMonogDataStore{
 				database.GetConnection().Db,
 			},
 			stubMongoDataStore{},
 			se,
 		}
-		sm.ha.initializeAdapter()
+		sm.ha.InitializeAdapter()
+		sm.ia.InitializeAdapter()
 	}
 }

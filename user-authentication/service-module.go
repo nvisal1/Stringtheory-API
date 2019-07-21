@@ -1,7 +1,9 @@
 package user_authentication
 
+import "stringtheory/shared"
+
 type serviceModule struct {
-	ha httpAdapter
+	ha shared.Adapter
 	se string
 }
 

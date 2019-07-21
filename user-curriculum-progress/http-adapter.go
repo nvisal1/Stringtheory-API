@@ -4,7 +4,7 @@ import "net/http"
 
 type moduleHttpAdapter struct {}
 
-func (mha moduleHttpAdapter) initializeAdapter() {
+func (mha moduleHttpAdapter) InitializeAdapter() {
 	http.HandleFunc("/users/:userId/courses/:courseId/lessons/:lessonId/exercises/:exerciseId/complete", mha.completeExercise)
 }
 

@@ -1,10 +1,12 @@
 package exercises
 
+import "stringtheory/shared"
+
 type stubMongoDataStore struct {}
 
-func (smds stubMongoDataStore) getLessonExercises(lE []string) ([]exercise, error) {
-	es := make([]exercise, 3)
-	e := exercise {
+func (smds stubMongoDataStore) getLessonExercises(lI string) ([]shared.Exercise, error) {
+	es := make([]shared.Exercise, 3)
+	e := shared.Exercise {
 		"test",
 		"test",
 	    0,
@@ -16,8 +18,8 @@ func (smds stubMongoDataStore) getLessonExercises(lE []string) ([]exercise, erro
 	return append(es, e), nil
 }
 
-func (smds stubMongoDataStore) getExercise(eI string) (exercise, error) {
-	e := exercise {
+func (smds stubMongoDataStore) getExercise(eI string) (shared.Exercise, error) {
+	e := shared.Exercise {
 		"test",
 		"test",
 		0,

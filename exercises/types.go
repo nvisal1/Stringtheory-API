@@ -6,7 +6,3 @@ type dataStore interface {
 	getLessonExercises(lI string) ([]shared.Exercise, error)
 	getExercise(eI string) (shared.Exercise, error)
 }
-
-type httpAdapter interface {
-	initializeAdapter()
-}

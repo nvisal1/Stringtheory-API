@@ -20,6 +20,6 @@ func InitializeModule() {
 			moduleHttpAdapter{},
 			se,
 		}
-		sm.ha.initializeAdapter()
+		sm.ha.InitializeAdapter()
 	}
 }

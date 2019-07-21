@@ -1,9 +1,13 @@
 package lessons
 
-import "log"
+import (
+	"log"
+	"stringtheory/shared"
+)
 
 type serviceModule struct {
-	ha httpAdapter
+	ha shared.Adapter
+	ia shared.Adapter
 	ds dataStore
 	tds dataStore
 	se string

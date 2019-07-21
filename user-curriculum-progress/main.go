@@ -24,6 +24,6 @@ func InitializeModule() {
 			tds: stubMongoDataStore{},
 			se: se,
 		}
-		sm.ha.initializeAdapter()
+		sm.ha.InitializeAdapter()
 	}
 }

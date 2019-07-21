@@ -6,7 +6,7 @@ import (
 
 type moduleHttpAdapter struct {}
 
-func (mha moduleHttpAdapter) initializeAdapter() {
+func (mha moduleHttpAdapter) InitializeAdapter() {
 	http.HandleFunc("/users", mha.handleUsers)
 }
 
