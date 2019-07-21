@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"stringtheory/courses"
 	"stringtheory/exercises"
+	"stringtheory/game"
 	guitar_interaction "stringtheory/guitar-interaction"
 	"stringtheory/lessons"
 	user_authentication "stringtheory/user-authentication"
@@ -43,6 +44,7 @@ func init() {
 func initializeServiceModules() {
 	courses.InitializeModule()
 	exercises.InitializeModule()
+	game.InitializeModule()
 	guitar_interaction.InitializeModule()
 	lessons.InitializeModule()
 	user_authentication.InitializeModule()
@@ -58,18 +60,5 @@ func openInternalServiceAdapters() {
 }
 
 func main() {
-	http.Handle("/phaser/", http.StripPrefix("/phaser", http.FileServer(http.Dir("./phaser/app"))))
-	http.HandleFunc("/phaser/play", phaser)
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-func phaser(w http.ResponseWriter, req *http.Request) {
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-}
-
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
