@@ -1,8 +1,10 @@
 package courses
 
+import "stringtheory/shared"
+
 type dataStore interface {
-	getAllCourses() ([]course, error)
-	getCourse(cI string) (course, error)
+	getAllCourses() ([]shared.Course, error)
+	getCourse(cI string) (shared.Course, error)
 }
 
 type httpAdapter interface {

@@ -15,7 +15,6 @@ func completeCourse(uN string, cI string) error {
 	}
 	// make sure that the user hasn't completed the course already
 
-
 	cC := completedCourse{
 		uN,
 		cI,

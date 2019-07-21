@@ -5,14 +5,15 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"log"
+	"stringtheory/shared"
 )
 
 type moduleMonogDataStore struct {
 	db *mongo.Database
 }
 
-func (mmds moduleMonogDataStore) getAllCourses() ([]course, error) {
-	var result []course
+func (mmds moduleMonogDataStore) getAllCourses() ([]shared.Course, error) {
+	var result []shared.Course
 
 	filter := bson.D{{}}
 
@@ -31,8 +32,8 @@ func (mmds moduleMonogDataStore) getAllCourses() ([]course, error) {
 	return result, nil
 }
 
-func (mmds moduleMonogDataStore) getCourse(cI string) (course, error) {
-	var result course
+func (mmds moduleMonogDataStore) getCourse(cI string) (shared.Course, error) {
+	var result shared.Course
 
 	filter := bson.D{{"_id", cI}}
 

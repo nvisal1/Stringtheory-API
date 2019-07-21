@@ -1,8 +1,12 @@
 package lessons
 
-func loadCourseLessons(cI string) ([]lesson, error) {
-	// get course to check existence
-	c := getCourse(cI)
+import "stringtheory/shared"
+
+func loadCourseLessons(cI string) ([]shared.Lesson, error) {
+    _, err := getCourse(cI)
+    if err != nil {
+    	return nil, err
+	}
 	l, err := sm.DataStore().getCourseLessons(cI)
 	if err != nil {
 		return l, err
@@ -10,7 +14,7 @@ func loadCourseLessons(cI string) ([]lesson, error) {
 	return l, nil
 }
 
-func loadLesson(lI string) (lesson, error) {
+func loadLesson(lI string) (shared.Lesson, error) {
 	l, err := sm.DataStore().getLesson(lI)
 	return l, err
 }
