@@ -12,6 +12,8 @@ type moduleMonogDataStore struct {
 	db *mongo.Database
 }
 
+// getAllCourses is responsible for finding and returning all
+// documents in the Courses collection.
 func (mmds moduleMonogDataStore) getAllCourses() ([]shared.Course, error) {
 	var result []shared.Course
 
@@ -32,6 +34,10 @@ func (mmds moduleMonogDataStore) getAllCourses() ([]shared.Course, error) {
 	return result, nil
 }
 
+// getCourse is responsible for finding and returning
+// a single document in the Courses collection
+// that matches the given course id. If no result
+// is found, the function returns an error.
 func (mmds moduleMonogDataStore) getCourse(cI string) (shared.Course, error) {
 	var result shared.Course
 

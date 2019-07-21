@@ -55,6 +55,8 @@ func initializeServiceModules() {
 	user_management.InitializeModule()
 }
 
+// main calls http.ListenAndServe to start the API.
+// The service will exit if an error occurs
 func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
