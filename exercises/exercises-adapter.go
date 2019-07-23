@@ -2,6 +2,7 @@ package exercises
 
 import (
 	"log"
+	"stringtheory/shared"
 	"sync"
 )
 
@@ -16,12 +17,12 @@ func (ea exercisesAdapter) InitializeAdapter() {
 	})
 }
 
-func (ea exercisesAdapter) LoadLessonExercises(lI string) ([]exercise, error) {
+func (ea exercisesAdapter) LoadLessonExercises(lI string) ([]shared.Exercise, error) {
 	e, err := loadLessonExercises(lI)
 	return e, err
 }
 
-func (ea exercisesAdapter) LoadExercise(eI string) (exercise, error) {
+func (ea exercisesAdapter) LoadExercise(eI string) (shared.Exercise, error) {
 	e, err := loadExercise(eI)
 	return e, err
 }

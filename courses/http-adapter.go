@@ -13,7 +13,7 @@ type moduleHttpAdapter struct {}
 // for this module
 func (mha moduleHttpAdapter) InitializeAdapter() {
 	http.HandleFunc("/courses", shared.Authenticate()(mha.getCourses))
-	http.HandleFunc("/courses/:courseId", mha.getCourse)
+	http.HandleFunc("/courses/:courseId", shared.Authenticate()(mha.getCourse))
 }
 
 // getCourses handles incoming requests to the /courses route.

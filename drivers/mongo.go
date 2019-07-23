@@ -71,7 +71,7 @@ func connect() (*mongo.Database, *mongo.Client) {
 			log.Fatal(err)
 		}
 
-		return client.Database("Cluster0"), client
+		return client.Database("Stringtheory"), client
 	}
 	return nil, nil
 }

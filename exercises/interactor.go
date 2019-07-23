@@ -1,6 +1,8 @@
 package exercises
 
-func loadLessonExercises(lI string) ([]exercise, error) {
+import "stringtheory/shared"
+
+func loadLessonExercises(lI string) ([]shared.Exercise, error) {
 	es, err := sm.DataStore().getLessonExercises(lI)
 	if err != nil {
 		return es, err
@@ -8,7 +10,7 @@ func loadLessonExercises(lI string) ([]exercise, error) {
 	return es, err
 }
 
-func loadExercise(eI string) (exercise, error) {
+func loadExercise(eI string) (shared.Exercise, error) {
 	e, err := sm.DataStore().getExercise(eI)
 	return e, err
 }

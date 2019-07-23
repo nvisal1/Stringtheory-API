@@ -21,13 +21,13 @@ import (
 // If no errors are returned during this process, the function
 // returns an object of type UserToken
 func processLogin(lc loginCredentials) (userToken, error) {
-	u, err := getUser(lc.username)
+	u, err := getUser(lc.Username)
 	if err != nil {
 		return userToken{
-			nil,
+			"",
 		}, errors.New("Username is incorrect")
 	}
-	if comparePasswords(u.Password, lc.password) {
+	if comparePasswords(u.Password, lc.Password) {
 		su := shared.SecureUser{
 			Username: u.Username,
 			Email: u.Email,
@@ -36,7 +36,7 @@ func processLogin(lc loginCredentials) (userToken, error) {
 		token, err := generateToken(su)
 		if err != nil {
 			return userToken{
-				nil,
+				"",
 			}, err
 		}
 
@@ -45,7 +45,7 @@ func processLogin(lc loginCredentials) (userToken, error) {
 		}, nil
 	}
 	return userToken{
-		nil,
+		"",
 	}, errors.New("Password is incorrect")
 }
 
@@ -66,14 +66,14 @@ func processRegistration(u shared.User) (userToken, error) {
 		hp, err := encryptPassword(u.Password)
 		if err != nil {
 			return userToken{
-				nil,
+				"",
 			}, err
 		}
 		u.Password = hp
 		err = createUser(u)
 		if err != nil {
 			return userToken{
-				nil,
+				"",
 			}, err
 		}
 		su := shared.SecureUser{
@@ -84,7 +84,7 @@ func processRegistration(u shared.User) (userToken, error) {
 		token, err := generateToken(su)
 		if err != nil {
 			return userToken{
-				nil,
+				"",
 			}, err
 		}
 		return userToken{
@@ -92,6 +92,6 @@ func processRegistration(u shared.User) (userToken, error) {
 		}, nil
 	}
 	return userToken{
-		nil,
+		"",
 	}, errors.New("A user with this username already exists")
 }

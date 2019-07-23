@@ -1,14 +1,15 @@
 package shared
 
 type SecureUser struct {
-	Id string
 	Username string
 	Name string
 	Email string
 }
 
 type User struct {
-	SecureUser
+	Username string
+	Name string
+	Email string
 	Password string
 }
 

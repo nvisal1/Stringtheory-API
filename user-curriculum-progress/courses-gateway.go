@@ -1,11 +1,11 @@
 package user_curriculum_progress
 
 import (
-	"stringtheory/courses/adapters"
+	"stringtheory/courses"
 	"stringtheory/shared"
 )
 
 func getCourse(cI string) (shared.Course, error) {
-	c, err := adapters.GetInstance().LoadCourse(cI)
+	c, err := courses.GetInstance().LoadCourse(cI)
 	return c, err
 }

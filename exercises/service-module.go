@@ -17,6 +17,7 @@ func (sm serviceModule) DataStore() dataStore {
 	var dataStore dataStore
 	switch sm.se {
 	case "production":
+	case "development":
 		dataStore = sm.ds
 		break
 	case "test":

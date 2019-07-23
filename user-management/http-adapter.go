@@ -2,12 +2,13 @@ package user_management
 
 import (
 	"net/http"
+	"stringtheory/shared"
 )
 
 type moduleHttpAdapter struct {}
 
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/users", mha.handleUsers)
+	http.HandleFunc("/users", shared.Authenticate()(mha.handleUsers))
 }
 
 func (mha moduleHttpAdapter) handleUsers(w http.ResponseWriter, req *http.Request) {

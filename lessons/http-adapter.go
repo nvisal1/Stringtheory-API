@@ -3,12 +3,13 @@ package lessons
 import (
 	"encoding/json"
 	"net/http"
+	"stringtheory/shared"
 )
 
 type moduleHttpAdapter struct {}
 
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/courses/:courseId/lessons", mha.getCourseLessons)
+	http.HandleFunc("/courses/:courseId/lessons", shared.Authenticate()(mha.getCourseLessons))
 }
 
 func (mha moduleHttpAdapter) getCourseLessons(w http.ResponseWriter, req *http.Request) {

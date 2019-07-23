@@ -1,12 +1,12 @@
 package user_authentication
 
 type loginCredentials struct {
-	username string
-	password string
+	Username string
+	Password string
 }
 
 type userToken struct {
-	token string
+	Token string
 }
 
 type httpAdapter interface {
