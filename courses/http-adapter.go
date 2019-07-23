@@ -12,8 +12,8 @@ type moduleHttpAdapter struct {}
 // The function is responsible for setting http routes
 // for this module
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/courses", shared.Authenticate()(mha.getCourses))
-	http.HandleFunc("/courses/:courseId", shared.Authenticate()(mha.getCourse))
+	http.HandleFunc("/courses", shared.Authenticate(mha.getCourses))
+	http.HandleFunc("/courses/:courseId", shared.Authenticate(mha.getCourse))
 }
 
 // getCourses handles incoming requests to the /courses route.

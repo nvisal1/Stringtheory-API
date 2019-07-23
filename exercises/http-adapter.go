@@ -9,7 +9,7 @@ import (
 type moduleHttpAdapter struct {}
 
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("courses/:courseId/lessons/:lessonId/exercises", shared.Authenticate()(mha.getLessonExercises))
+	http.HandleFunc("courses/:courseId/lessons/:lessonId/exercises", shared.Authenticate(mha.getLessonExercises))
 }
 
 func (mha moduleHttpAdapter) getLessonExercises(w http.ResponseWriter, req *http.Request) {

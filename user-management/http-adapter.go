@@ -8,7 +8,7 @@ import (
 type moduleHttpAdapter struct {}
 
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/users", shared.Authenticate()(mha.handleUsers))
+	http.HandleFunc("/users", shared.Authenticate(mha.handleUsers))
 }
 
 func (mha moduleHttpAdapter) handleUsers(w http.ResponseWriter, req *http.Request) {

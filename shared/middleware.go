@@ -3,16 +3,12 @@ package shared
 import (
 	"context"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/mitchellh/mapstructure"
 	"net/http"
 	"os"
 	"strings"
 )
 
-type Middleware func(http.HandlerFunc) http.HandlerFunc
-
-func Authenticate() Middleware {
-	return func(h http.HandlerFunc) http.HandlerFunc {
+ func Authenticate (h http.HandlerFunc) http.HandlerFunc {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			key, exists := os.LookupEnv("KEY")
 			if exists {
@@ -31,9 +27,8 @@ func Authenticate() Middleware {
 					return jwtSecret, nil
 				})
 				if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-					var decodedToken SecureUser
-					mapstructure.Decode(claims, &decodedToken)
-					ctx := context.WithValue(r.Context(), "User", decodedToken)
+					user := claims["user"]
+					ctx := context.WithValue(r.Context(), "User", user)
 					h.ServeHTTP(w, r.WithContext(ctx))
 					return
 				} else {
@@ -45,5 +40,4 @@ func Authenticate() Middleware {
 				return
 			}
 		})
-	}
-}
+ }
