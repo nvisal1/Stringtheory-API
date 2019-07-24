@@ -10,12 +10,10 @@ go:
 git:
   depth: 1
 
+install: true
+
 notifications:
   email: false
-
-before_script:
-  - go get -d -v ./...
-  - go install -v ./...
 
 script:
   - go test -v -race ./...
