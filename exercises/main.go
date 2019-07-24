@@ -1,6 +1,8 @@
 package exercises
 
 import (
+	"errors"
+	"log"
 	"os"
 	database "stringtheory/drivers"
 )
@@ -14,18 +16,37 @@ var sm serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
+	ds, err := setDataStore()
+	if err != nil {
+		log.Fatal(err)
+	}
+	sm = serviceModule{
+		moduleHttpAdapter{},
+		exercisesAdapter{},
+		ds,
+	}
+	sm.ha.InitializeAdapter()
+	sm.ia.InitializeAdapter()
+}
+
+func setDataStore() (dataStore, error) {
 	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
 	if exists {
-		sm = serviceModule{
-			ha: moduleHttpAdapter{},
-			ia: exercisesAdapter{},
-			ds: moduleMongoDataStore {
+		var dataStore dataStore
+		switch se {
+		case "production":
+		case "development":
+			dataStore = moduleMongoDataStore{
 				database.GetConnection().Db,
-			},
-			tds: stubMongoDataStore{},
-			se: se,
+			}
+			break
+		case "test":
+			dataStore = stubMongoDataStore{}
+			break
+		default:
+			log.Fatal("Service environment property is not set correctly")
 		}
-		sm.ha.InitializeAdapter()
-		sm.ia.InitializeAdapter()
+		return dataStore, nil
 	}
+	return stubMongoDataStore{}, errors.New("SERVICE_ENVIRONMENT not set")
 }

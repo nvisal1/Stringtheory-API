@@ -27,7 +27,6 @@ func InitializeModule() {
 	}
 	sm.ha.InitializeAdapter()
 	sm.ia.InitializeAdapter()
-
 }
 
 func setDataStore() (dataStore, error) {
@@ -37,7 +36,7 @@ func setDataStore() (dataStore, error) {
 		switch se {
 		case "production":
 		case "development":
-			dataStore = moduleMonogDataStore{
+			dataStore = moduleMongoDataStore{
 				database.GetConnection().Db,
 			}
 			break

@@ -8,13 +8,13 @@ import (
 	"stringtheory/shared"
 )
 
-type moduleMonogDataStore struct {
+type moduleMongoDataStore struct {
 	db *mongo.Database
 }
 
 // getAllCourses is responsible for finding and returning all
 // documents in the Courses collection.
-func (mmds moduleMonogDataStore) getAllCourses() ([]shared.Course, error) {
+func (mmds moduleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 	var result []shared.Course
 
 	filter := bson.D{{}}
@@ -38,7 +38,7 @@ func (mmds moduleMonogDataStore) getAllCourses() ([]shared.Course, error) {
 // a single document in the Courses collection
 // that matches the given course id. If no result
 // is found, the function returns an error.
-func (mmds moduleMonogDataStore) getCourse(cI string) (shared.Course, error) {
+func (mmds moduleMongoDataStore) getCourse(cI string) (shared.Course, error) {
 	var result shared.Course
 
 	filter := bson.D{{"_id", cI}}
