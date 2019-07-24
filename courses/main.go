@@ -1,6 +1,8 @@
 package courses
 
 import (
+	"errors"
+	"log"
 	"os"
 	database "stringtheory/drivers"
 )
@@ -14,18 +16,38 @@ var sm serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
+	ds, err := setDataStore()
+	if err != nil {
+		log.Fatal(err)
+	}
+	sm = serviceModule{
+		moduleHttpAdapter{},
+		coursesAdapter{},
+		ds,
+	}
+	sm.ha.InitializeAdapter()
+	sm.ia.InitializeAdapter()
+
+}
+
+func setDataStore() (dataStore, error) {
 	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
 	if exists {
-		sm = serviceModule{
-			moduleHttpAdapter{},
-			coursesAdapter{},
-			moduleMonogDataStore{
+		var dataStore dataStore
+		switch se {
+		case "production":
+		case "development":
+			dataStore = moduleMonogDataStore{
 				database.GetConnection().Db,
-			},
-			stubMongoDataStore{},
-			se,
+			}
+			break
+		case "test":
+			dataStore = stubMongoDataStore{}
+			break
+		default:
+			log.Fatal("Service environment property is not set correctly")
 		}
-		sm.ha.InitializeAdapter()
-		sm.ia.InitializeAdapter()
+		return dataStore, nil
 	}
+	return stubMongoDataStore{}, errors.New("SERVICE_ENVIRONMENT not set")
 }

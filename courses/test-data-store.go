@@ -1,6 +1,9 @@
 package courses
 
-import "stringtheory/shared"
+import (
+	"errors"
+	"stringtheory/shared"
+)
 
 type stubMongoDataStore struct {}
 
@@ -21,5 +24,9 @@ func (smds stubMongoDataStore) getCourse(cI string) (shared.Course, error) {
 		"test",
 		"test",
 	}
-	return c, nil
+
+	if cI != "" {
+		return c, nil
+	}
+	return c, errors.New("Not found")
 }

@@ -1,7 +1,6 @@
 package courses
 
 import (
-	"log"
 	"stringtheory/shared"
 	"sync"
 )
@@ -44,8 +43,5 @@ func (ca coursesAdapter) LoadCourse(cI string) (shared.Course, error) {
 // the function throws an error and the service
 // exits.
 func GetInstance() coursesAdapter {
-	if instance.LoadAllCourses == nil {
-		log.Fatal("Lessons Adapter has not been created")
-	}
 	return instance
 }

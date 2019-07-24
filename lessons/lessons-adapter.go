@@ -1,7 +1,6 @@
 package lessons
 
 import (
-	"log"
 	"stringtheory/shared"
 	"sync"
 )
@@ -28,8 +27,5 @@ func (la lessonsAdapter) LoadLesson(lI string) (shared.Lesson, error) {
 }
 
 func GetInstance() lessonsAdapter {
-	if instance.LoadCourseLessons == nil {
-		log.Fatal("Lessons Adapter has not been created")
-	}
 	return instance
 }

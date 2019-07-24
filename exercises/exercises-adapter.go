@@ -1,7 +1,6 @@
 package exercises
 
 import (
-	"log"
 	"stringtheory/shared"
 	"sync"
 )
@@ -28,8 +27,5 @@ func (ea exercisesAdapter) LoadExercise(eI string) (shared.Exercise, error) {
 }
 
 func GetInstance() exercisesAdapter {
-	if instance.LoadExercise == nil {
-		log.Fatal("Lessons Adapter has not been created")
-	}
 	return instance
 }

@@ -8,7 +8,7 @@ import "stringtheory/shared"
 // This function returns a slice of courses
 // and an error
 func loadAllCourses() ([]shared.Course, error) {
-	c, err := sm.DataStore().getAllCourses()
+	c, err := sm.ds.getAllCourses()
 	if err != nil {
 		return c, err
 	}
@@ -20,6 +20,6 @@ func loadAllCourses() ([]shared.Course, error) {
 // This function accepts a course id and
 // returns a course and an error
 func loadCourse(cI string) (shared.Course, error) {
-	c, err := sm.DataStore().getCourse(cI)
+	c, err := sm.ds.getCourse(cI)
 	return c, err
 }

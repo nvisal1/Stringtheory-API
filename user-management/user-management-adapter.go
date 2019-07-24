@@ -1,7 +1,6 @@
 package user_management
 
 import (
-	"log"
 	"stringtheory/shared"
 	"sync"
 )
@@ -28,9 +27,6 @@ func (uma userManagementAdapter) CreateUser(u shared.User) error {
 }
 
 func GetInstance() userManagementAdapter {
-	if instance.GetUser == nil {
-		log.Fatal("User Management Adapter has not been created")
-	}
 	return instance
 }
 
