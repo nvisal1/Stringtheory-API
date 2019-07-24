@@ -10,7 +10,9 @@ go:
 git:
   depth: 1
 
-install: true
+install:
+  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$PATH"
 
 notifications:
   email: false
