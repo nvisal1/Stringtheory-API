@@ -1,0 +1,21 @@
+dist: xenial
+
+language: go
+
+env: SERVICE_ENVIRONMENT=test
+
+go:
+  - 1.11.5
+
+git:
+  depth: 1
+
+notifications:
+  email: false
+
+before_script:
+  - go get -d -v ./...
+  - go install -v ./...
+
+script:
+  - go test -v -race ./...
