@@ -2,7 +2,7 @@ dist: xenial
 
 language: go
 
-env: SERVICE_ENVIRONMENT=test
+env: SERVICE_ENVIRONMENT=test GO111MODULE=on
 
 go:
   - 1.11.5
@@ -10,9 +10,7 @@ go:
 git:
   depth: 1
 
-install:
-  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
-  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$PATH"
+install: true
 
 notifications:
   email: false
