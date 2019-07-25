@@ -2,7 +2,7 @@ package exercises
 
 import (
 	"errors"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type stubMongoDataStore struct {}

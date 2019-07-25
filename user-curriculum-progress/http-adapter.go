@@ -2,7 +2,7 @@ package user_curriculum_progress
 
 import (
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type moduleHttpAdapter struct {}

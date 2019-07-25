@@ -2,7 +2,7 @@ package user_authentication
 
 import (
 	"errors"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 // generateToken accepts an object u of type LoginCredentials.

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type moduleHttpAdapter struct{}

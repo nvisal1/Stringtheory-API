@@ -1,6 +1,6 @@
 package lessons
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 func loadCourseLessons(cI string) ([]shared.Lesson, error) {
     _, err := getCourse(cI)

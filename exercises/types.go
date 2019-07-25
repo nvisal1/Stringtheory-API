@@ -1,6 +1,6 @@
 package exercises
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 type dataStore interface {
 	getLessonExercises(lI string) ([]shared.Exercise, error)

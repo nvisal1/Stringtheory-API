@@ -1,7 +1,7 @@
 package user_management
 
 import (
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 	"sync"
 )
 

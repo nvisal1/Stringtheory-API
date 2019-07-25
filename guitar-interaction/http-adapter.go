@@ -2,7 +2,7 @@ package guitar_interaction
 
 import (
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 func initializeAdapter() {

@@ -2,7 +2,7 @@ package user_curriculum_progress
 
 import (
 	"log"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type serviceModule struct {
