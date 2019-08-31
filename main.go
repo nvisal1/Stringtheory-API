@@ -60,7 +60,7 @@ func initializeServiceModules() {
 // The service will exit if an error occurs
 func main() {
 	http.HandleFunc("/", index)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":5000", nil))
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
