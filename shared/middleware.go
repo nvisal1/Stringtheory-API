@@ -10,12 +10,20 @@ import (
 
  func Authenticate (h http.HandlerFunc) http.HandlerFunc {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			setupResponse(&w, r)
+			if r.Method == "OPTIONS" {
+				return
+			}
 			key, exists := os.LookupEnv("KEY")
 			if exists {
 				head := r.Header.Get("Authorization")
+				if len(strings.Split(head, " ")) != 2 {
+					http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
+					return
+				}
 				t := strings.Split(head, " ")[1]
 				jwtSecret := []byte(key)
-				if t == "" {
+				if t== "" {
 					http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
 					return
 				}
@@ -41,3 +49,9 @@ import (
 			}
 		})
  }
+
+func setupResponse(w *http.ResponseWriter, req *http.Request) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+	(*w).Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	(*w).Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+}

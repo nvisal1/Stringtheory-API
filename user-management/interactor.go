@@ -2,7 +2,7 @@ package user_management
 
 import (
 	"errors"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 

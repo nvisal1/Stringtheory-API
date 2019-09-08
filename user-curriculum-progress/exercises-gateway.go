@@ -1,8 +1,8 @@
 package user_curriculum_progress
 
 import (
-	"stringtheory/exercises"
-	"stringtheory/shared"
+	"Stringtheory-API/exercises"
+	"Stringtheory-API/shared"
 )
 
 func getExercise(eI string) (shared.Exercise, error) {

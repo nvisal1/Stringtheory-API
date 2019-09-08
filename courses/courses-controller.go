@@ -1,6 +1,6 @@
 package courses
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 
 // loadAllCourses is responsible for asking

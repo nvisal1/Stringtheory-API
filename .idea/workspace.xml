@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2818286-58fb-491a-99bf-a1394ef73fff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f2818286-58fb-491a-99bf-a1394ef73fff" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +13,7 @@
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/courses/courses_controller_test.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses_controller_test.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="480">
                   <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
@@ -28,7 +25,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/exercises/exercises_controller_test.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/exercises_controller_test.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="345">
                   <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
@@ -40,7 +37,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Dockerfile">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/Dockerfile">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="75">
                   <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="23" />
@@ -49,7 +46,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.env">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/.env">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
                   <caret selection-end-column="31" />
@@ -58,7 +55,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/exercises/main.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/main.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="548">
                   <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
@@ -67,7 +64,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/exercises/service-module.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/service-module.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="165">
                   <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -79,7 +76,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/exercises/exercises-controller.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/exercises-controller.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="360">
                   <caret line="24" selection-start-line="24" selection-end-line="24" />
@@ -88,7 +85,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/exercises/test-data-store.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/test-data-store.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="600">
                   <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
@@ -100,7 +97,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/courses/courses-controller.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses-controller.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="255">
                   <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="32" />
@@ -109,7 +106,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/courses/test-data-store.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/test-data-store.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="450">
                   <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
@@ -125,7 +122,7 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/courses/courses_controller_test.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses_controller_test.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
                   <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
@@ -137,7 +134,7 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/courses/main.go">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/main.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="165">
                   <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
@@ -146,10 +143,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.travis.yml">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/.travis.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+                <state relative-caret-position="60">
+                  <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses-adapter.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#17#62#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -178,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/shared/service-module.go" />
         <option value="$PROJECT_DIR$/exercises/types.go" />
         <option value="$PROJECT_DIR$/lessons/types.go" />
         <option value="$PROJECT_DIR$/lessons/main.go" />
@@ -229,10 +237,11 @@
         <option value="$PROJECT_DIR$/exercises/test-data-store.go" />
         <option value="$PROJECT_DIR$/exercises/exercises_controller_test.go" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/../Stringtheory-API/.travis.yml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -249,16 +258,16 @@
           <expand>
             <path>
               <item name="stringtheory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stringtheory" type="462c0819:PsiDirectoryNode" />
+              <item name="Stringtheory-API" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stringtheory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stringtheory" type="462c0819:PsiDirectoryNode" />
+              <item name="Stringtheory-API" type="462c0819:PsiDirectoryNode" />
               <item name="courses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stringtheory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stringtheory" type="462c0819:PsiDirectoryNode" />
+              <item name="Stringtheory-API" type="462c0819:PsiDirectoryNode" />
               <item name="exercises" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -365,10 +374,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21489622" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21489622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -381,7 +390,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15508021" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15508021" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -420,19 +429,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/user-authentication/http-adapter.go</url>
+          <url>file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/http-adapter.go</url>
           <line>48</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/courses/http-adapter.go</url>
+          <url>file://$PROJECT_DIR$/../Stringtheory-API/courses/http-adapter.go</url>
           <line>26</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/user-authentication/interactor.go</url>
+          <url>file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/interactor.go</url>
           <line>32</line>
           <properties />
           <option name="timeStamp" value="17" />
@@ -441,7 +450,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/drivers/mongo.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/drivers/mongo.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
           <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
@@ -451,25 +460,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lessons/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/lessons/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guitar-interaction/hub.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/guitar-interaction/hub.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/guitar-interaction/client.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/guitar-interaction/client.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-854" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guitar-interaction/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/guitar-interaction/main.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-curriculum-progress/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-curriculum-progress/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
@@ -479,7 +488,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
@@ -489,14 +498,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-curriculum-progress/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-curriculum-progress/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
@@ -506,7 +515,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
@@ -516,69 +525,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared/types.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/shared/types.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-curriculum-progress/test-date-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-curriculum-progress/test-date-store.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/test-data-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/test-data-store.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="72" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="24" column="1" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/interactor.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/interactor.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/user-management-gateway.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/user-management-gateway.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/data-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/data-store.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/types.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/types.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="88" lean-forward="true" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/game/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guitar-interaction/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/guitar-interaction/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
@@ -588,14 +597,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lessons/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/lessons/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-curriculum-progress/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-curriculum-progress/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
@@ -605,21 +614,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/token-manager.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/token-manager.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/interactor.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/interactor.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
@@ -633,7 +642,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared/middleware.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/shared/middleware.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
@@ -650,42 +659,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-authentication/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-authentication/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/http-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/http-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/exercises-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/exercises-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lessons/lessons-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/lessons/lessons-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user-management/user-management-adapter.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/user-management/user-management-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/test-data-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/test-data-store.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
@@ -695,14 +704,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/courses-adapter.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/courses/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
@@ -712,7 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lessons/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/lessons/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
@@ -722,28 +724,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/courses-controller.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses-controller.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="20" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/data-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/data-store.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/types.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/types.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/service-module.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/service-module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -753,21 +755,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/exercises-controller.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/exercises-controller.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/test-data-store.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/test-data-store.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
@@ -777,14 +779,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/main.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/courses_controller_test.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses_controller_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
@@ -794,7 +796,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/exercises_controller_test.go">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/exercises/exercises_controller_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
@@ -804,24 +806,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/courses/courses-adapter.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#17#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Stringtheory-API/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>

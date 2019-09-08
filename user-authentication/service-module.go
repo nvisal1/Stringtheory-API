@@ -1,6 +1,6 @@
 package user_authentication
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 type serviceModule struct {
 	ha shared.Adapter

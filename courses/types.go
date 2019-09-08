@@ -1,6 +1,6 @@
 package courses
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 type dataStore interface {
 	getAllCourses() ([]shared.Course, error)

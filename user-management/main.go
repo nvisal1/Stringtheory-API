@@ -2,7 +2,7 @@ package user_management
 
 import (
 	"os"
-	database "stringtheory/drivers"
+	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule

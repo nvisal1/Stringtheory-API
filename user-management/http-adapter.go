@@ -2,7 +2,7 @@ package user_management
 
 import (
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type moduleHttpAdapter struct {}

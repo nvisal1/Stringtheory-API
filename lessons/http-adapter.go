@@ -3,7 +3,7 @@ package lessons
 import (
 	"encoding/json"
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type moduleHttpAdapter struct {}

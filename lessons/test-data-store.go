@@ -1,6 +1,6 @@
 package lessons
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 type stubMongoDataStore struct {}
 

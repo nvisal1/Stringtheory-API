@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 	"os"
-	database "stringtheory/drivers"
+	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule

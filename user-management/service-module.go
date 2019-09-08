@@ -2,7 +2,7 @@ package user_management
 
 import (
 	"log"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type serviceModule struct {

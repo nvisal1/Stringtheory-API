@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/dgrijalva/jwt-go"
 	"os"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 	"time"
 )
 
