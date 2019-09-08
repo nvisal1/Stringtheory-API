@@ -5,16 +5,16 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"stringtheory/courses"
-	"stringtheory/exercises"
-	"stringtheory/game"
-	guitar_interaction "stringtheory/guitar-interaction"
-	"stringtheory/lessons"
-	user_authentication "stringtheory/user-authentication"
-	user_curriculum_progress "stringtheory/user-curriculum-progress"
-	user_management "stringtheory/user-management"
+	"Stringtheory-API/courses"
+	"Stringtheory-API/exercises"
+	"Stringtheory-API/game"
+	guitar_interaction "Stringtheory-API/guitar-interaction"
+	"Stringtheory-API/lessons"
+	user_authentication "Stringtheory-API/user-authentication"
+	user_curriculum_progress "Stringtheory-API/user-curriculum-progress"
+	user_management "Stringtheory-API/user-management"
 
-	database "stringtheory/drivers"
+	database "Stringtheory-API/drivers"
 )
 
 // init is responsible for creating all of the necessary
@@ -60,7 +60,7 @@ func initializeServiceModules() {
 // The service will exit if an error occurs
 func main() {
 	http.HandleFunc("/", index)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":5000", nil))
 }
 
 func index(w http.ResponseWriter, req *http.Request) {

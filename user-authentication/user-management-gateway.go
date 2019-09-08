@@ -1,8 +1,8 @@
 package user_authentication
 
 import (
-	"stringtheory/shared"
-	user_management "stringtheory/user-management"
+	"Stringtheory-API/shared"
+	user_management "Stringtheory-API/user-management"
 )
 
 

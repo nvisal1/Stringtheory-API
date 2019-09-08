@@ -1,6 +1,6 @@
 package exercises
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 // loadAllLessonExercises is responsible for asking
 // the database for all exercises that belong to a given lesson.

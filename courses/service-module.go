@@ -1,7 +1,7 @@
 package courses
 
 import (
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type serviceModule struct {

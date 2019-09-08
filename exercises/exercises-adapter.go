@@ -1,7 +1,7 @@
 package exercises
 
 import (
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 	"sync"
 )
 

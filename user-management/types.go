@@ -1,6 +1,6 @@
 package user_management
 
-import "stringtheory/shared"
+import "Stringtheory-API/shared"
 
 type dataStore interface {
 	getUser(un string) (shared.User, error)

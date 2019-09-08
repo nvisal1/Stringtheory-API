@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type moduleHttpAdapter struct{}
@@ -31,6 +31,10 @@ func (mha moduleHttpAdapter) InitializeAdapter() {
 // the variable of type UserToken is encoded and returned
 // to the client.
 func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
+	setupResponse(&w, req)
+	if req.Method == "OPTIONS" {
+		return
+	}
 	if req.Method == http.MethodPost {
 		b, err := ioutil.ReadAll(req.Body)
 		defer req.Body.Close()
@@ -66,6 +70,10 @@ func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) {
+	setupResponse(&w, req)
+	if req.Method == "OPTIONS" {
+		return
+	}
 	if req.Method == http.MethodPost {
 		b, err := ioutil.ReadAll(req.Body)
 		defer req.Body.Close()
@@ -99,4 +107,10 @@ func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) 
 		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a POST request to this endpoint", http.StatusNotFound)
 		return
 	}
+}
+
+func setupResponse(w *http.ResponseWriter, req *http.Request) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+	(*w).Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	(*w).Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 }

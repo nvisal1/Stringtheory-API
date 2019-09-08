@@ -1,8 +1,8 @@
 package lessons
 
 import (
-	"stringtheory/courses"
-	"stringtheory/shared"
+	"Stringtheory-API/courses"
+	"Stringtheory-API/shared"
 )
 
 func getCourse(cI string) (shared.Course, error) {

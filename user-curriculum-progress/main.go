@@ -2,7 +2,7 @@ package user_curriculum_progress
 
 import (
 	"os"
-	database "stringtheory/drivers"
+	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule

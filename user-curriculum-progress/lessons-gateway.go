@@ -1,8 +1,8 @@
 package user_curriculum_progress
 
 import (
-	"stringtheory/lessons"
-	"stringtheory/shared"
+	"Stringtheory-API/lessons"
+	"Stringtheory-API/shared"
 )
 
 func getLesson(lI string) (shared.Lesson, error) {

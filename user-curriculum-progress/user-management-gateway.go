@@ -1,8 +1,8 @@
 package user_curriculum_progress
 
 import (
-	"stringtheory/shared"
-	user_management "stringtheory/user-management"
+	"Stringtheory-API/shared"
+	user_management "Stringtheory-API/user-management"
 )
 
 func getUser(un string) (shared.User, error) {

@@ -14,7 +14,7 @@ type User struct {
 }
 
 type Course struct {
-	Id string
+	ID string
 	Name string
 	Description string
 }

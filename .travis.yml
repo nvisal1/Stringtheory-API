@@ -2,7 +2,7 @@ dist: xenial
 
 language: go
 
-env: SERVICE_ENVIRONMENT=test
+env: SERVICE_ENVIRONMENT=test GO111MODULE=on
 
 go:
   - 1.11.5
@@ -10,12 +10,11 @@ go:
 git:
   depth: 1
 
+install: true
+
 notifications:
   email: false
 
-before_script:
-  - go get -d -v ./...
-  - go install -v ./...
-
 script:
+  - ls
   - go test -v -race ./...

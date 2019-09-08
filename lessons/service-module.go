@@ -2,7 +2,7 @@ package lessons
 
 import (
 	"log"
-	"stringtheory/shared"
+	"Stringtheory-API/shared"
 )
 
 type serviceModule struct {
