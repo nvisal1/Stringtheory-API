@@ -17,6 +17,7 @@ type Course struct {
 	ID string
 	Name string
 	Description string
+	LessonsURI string
 }
 
 type Lesson struct {

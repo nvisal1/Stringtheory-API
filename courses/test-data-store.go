@@ -13,6 +13,7 @@ func (smds stubMongoDataStore) getAllCourses() ([]shared.Course, error) {
 		"test",
 		"test",
 		"test",
+		"test",
 	}
 	res := append(courses, c)
 	return res, nil
@@ -20,6 +21,7 @@ func (smds stubMongoDataStore) getAllCourses() ([]shared.Course, error) {
 
 func (smds stubMongoDataStore) getCourse(cI string) (shared.Course, error) {
 	c := shared.Course{
+		"test",
 		"test",
 		"test",
 		"test",

@@ -1,6 +1,10 @@
 package courses
 
-import "Stringtheory-API/shared"
+import (
+	"Stringtheory-API/shared"
+	"errors"
+	"os"
+)
 
 
 // loadAllCourses is responsible for asking
@@ -12,7 +16,16 @@ func loadAllCourses() ([]shared.Course, error) {
 	if err != nil {
 		return c, err
 	}
-	return c, nil
+
+	withLessonURIs := c[:0]
+	for _, course := range c {
+		course.LessonsURI, err = generateLessonURI(course.ID)
+		if err != nil {
+			return c, err
+		}
+		withLessonURIs = append(withLessonURIs, course)
+	}
+	return withLessonURIs, nil
 }
 
 // loadCourse is responsible for asking the
@@ -22,4 +35,12 @@ func loadAllCourses() ([]shared.Course, error) {
 func loadCourse(cI string) (shared.Course, error) {
 	c, err := sm.ds.getCourse(cI)
 	return c, err
+}
+
+func generateLessonURI(courseID string) (string, error) {
+	serviceDomain, exists := os.LookupEnv("SERVICE_DOMAIN")
+	if exists {
+		return serviceDomain + "/courses/" + courseID  + "/lessons", nil
+	}
+	return "",  errors.New("service domain not set")
 }
