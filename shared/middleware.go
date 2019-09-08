@@ -13,9 +13,13 @@ import (
 			key, exists := os.LookupEnv("KEY")
 			if exists {
 				head := r.Header.Get("Authorization")
+				if len(head) != 2 {
+					http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
+					return
+				}
 				t := strings.Split(head, " ")[1]
 				jwtSecret := []byte(key)
-				if t == "" {
+				if t== "" {
 					http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
 					return
 				}

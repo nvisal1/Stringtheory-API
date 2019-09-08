@@ -70,6 +70,10 @@ func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request) {
 }
 
 func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request) {
+	setupResponse(&w, req)
+	if req.Method == "OPTIONS" {
+		return
+	}
 	if req.Method == http.MethodPost {
 		b, err := ioutil.ReadAll(req.Body)
 		defer req.Body.Close()
