@@ -23,6 +23,10 @@ func (mha moduleHttpAdapter) InitializeAdapter() {
 // interactor. The response from loadAllCourses is converted to a JSON
 // object and returned to the client.
 func (mha moduleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request) {
+	setupResponse(&w, req)
+	if req.Method == "OPTIONS" {
+		return
+	}
 	if req.Method == http.MethodGet {
 		c, err := loadAllCourses()
 		if err != nil {
@@ -53,4 +57,11 @@ func (mha moduleHttpAdapter) getCourse(w http.ResponseWriter, req *http.Request)
 		return
 	}
 }
+
+func setupResponse(w *http.ResponseWriter, req *http.Request) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+	(*w).Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	(*w).Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+}
+
 

@@ -1,11 +1,12 @@
 package courses
 
 import (
+	"Stringtheory-API/shared"
 	"context"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"log"
-	"Stringtheory-API/shared"
 )
 
 type moduleMongoDataStore struct {
@@ -27,9 +28,18 @@ func (mmds moduleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 		log.Fatal(err)
 	}
 
-	err = cur.All(context.TODO(), &result)
-	if err != nil {
-		log.Fatal(err)
+	for cur.Next(context.TODO()) {
+		elem := &bson.D{}
+		if err = cur.Decode(elem); err != nil {
+			return result, err
+		}
+		m := elem.Map()
+		c := shared.Course{
+			ID:         m["_id"].(primitive.ObjectID).Hex(),
+			Name:  m["Name"].(string),
+			Description: m["Description"].(string),
+		}
+		result = append(result, c)
 	}
 	return result, nil
 }
