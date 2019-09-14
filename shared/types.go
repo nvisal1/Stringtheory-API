@@ -27,6 +27,7 @@ type Lesson struct {
 	Description string
 	CourseId string
 	HasNext bool
+	ExercisesURI string
 }
 
 type Exercise struct {

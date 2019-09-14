@@ -13,6 +13,7 @@ func (smds stubMongoDataStore) getCourseLessons(cI string) ([]shared.Lesson, err
 		"test",
 		"test",
 		true,
+		"test",
 	}
 	return append(es, e), nil
 }
@@ -25,6 +26,7 @@ func (smds stubMongoDataStore) getLesson(lI string) (shared.Lesson, error) {
 		"test",
 		"test",
 		true,
+		"test",
 	}
 
 	return l, nil
