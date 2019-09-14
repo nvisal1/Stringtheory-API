@@ -3,13 +3,14 @@ package shared
 import (
 	"context"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"os"
 	"strings"
 )
 
- func Authenticate (h http.HandlerFunc) http.HandlerFunc {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+ func Authenticate (h httprouter.Handle) httprouter.Handle {
+		return func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 			setupResponse(&w, r)
 			if r.Method == "OPTIONS" {
 				return
@@ -37,7 +38,7 @@ import (
 				if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 					user := claims["user"]
 					ctx := context.WithValue(r.Context(), "User", user)
-					h.ServeHTTP(w, r.WithContext(ctx))
+					h(w, r.WithContext(ctx), p)
 					return
 				} else {
 					http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
@@ -47,7 +48,7 @@ import (
 				http.Error(w, http.StatusText(http.StatusInternalServerError) + " Secret not set", http.StatusInternalServerError)
 				return
 			}
-		})
+		}
  }
 
 func setupResponse(w *http.ResponseWriter, req *http.Request) {

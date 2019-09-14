@@ -1,9 +1,11 @@
 package courses
 
 import (
-	"encoding/json"
-	"net/http"
+	"Stringtheory-API/drivers/router"
 	"Stringtheory-API/shared"
+	"encoding/json"
+	"github.com/julienschmidt/httprouter"
+	"net/http"
 )
 
 type moduleHttpAdapter struct {}
@@ -12,38 +14,33 @@ type moduleHttpAdapter struct {}
 // The function is responsible for setting http routes
 // for this module
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/courses", shared.Authenticate(mha.getCourses))
-	http.HandleFunc("/courses/:courseId", shared.Authenticate(mha.getCourse))
+	r := router.GetRouter()
+	r.GET("/courses", shared.Authenticate(mha.getCourses))
 }
 
 // getCourses handles incoming requests to the /courses route.
 // The function ensures that the method used in the request
 // is GET. If it is not, the function throws an error.
 // If it is, the function will call loadAllCourses in the module
-// interactor. The response from loadAllCourses is converted to a JSON
+// controller. The response from loadAllCourses is converted to a JSON
 // object and returned to the client.
-func (mha moduleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request) {
-	setupResponse(&w, req)
-	if req.Method == "OPTIONS" {
+func (mha moduleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
+	c, err := loadAllCourses()
+	if err != nil {
+		http.Error(
+			w,
+			http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 		return
 	}
-	if req.Method == http.MethodGet {
-		c, err := loadAllCourses()
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
-			return
-		}
-		e, err := json.Marshal(c)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
-			return
-		}
-		w.Header().Set("content-type", "application/json")
-		w.Write(e)
-	} else {
-		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a GET request to this endpoint", http.StatusNotFound)
+	e, err := json.Marshal(c)
+	if err != nil {
+		http.Error(
+			w,
+			http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 		return
 	}
+	w.Header().Set("content-type", "application/json")
+	w.Write(e)
 }
 
 // getCourse handles incoming requests to /courses/:courseId.
@@ -57,11 +54,4 @@ func (mha moduleHttpAdapter) getCourse(w http.ResponseWriter, req *http.Request)
 		return
 	}
 }
-
-func setupResponse(w *http.ResponseWriter, req *http.Request) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
-	(*w).Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-	(*w).Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
-}
-
 

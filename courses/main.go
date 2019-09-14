@@ -1,10 +1,10 @@
 package courses
 
 import (
+	database2 "Stringtheory-API/drivers/database"
 	"errors"
 	"log"
 	"os"
-	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule
@@ -37,7 +37,7 @@ func setDataStore() (dataStore, error) {
 		case "production":
 		case "development":
 			dataStore = moduleMongoDataStore{
-				database.GetConnection().Db,
+				database2.GetConnection().Db,
 			}
 			break
 		case "test":

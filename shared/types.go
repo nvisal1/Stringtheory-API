@@ -21,9 +21,9 @@ type Course struct {
 }
 
 type Lesson struct {
-	Id string
+	ID string
 	Name string
-	Order int
+	Order int32
 	Description string
 	CourseId string
 	HasNext bool
@@ -32,7 +32,7 @@ type Lesson struct {
 type Exercise struct {
 	Id string
 	Name string
-	Order int
+	Order int32
 	Notes []string
 	Description string
 	LessonId string

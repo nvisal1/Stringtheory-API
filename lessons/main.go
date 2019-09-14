@@ -1,8 +1,8 @@
 package lessons
 
 import (
+	database2 "Stringtheory-API/drivers/database"
 	"os"
-	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule
@@ -20,7 +20,7 @@ func InitializeModule() {
 			ha: moduleHttpAdapter{},
 			ia: lessonsAdapter{},
 			ds: moduleMongoDataStore {
-				database.GetConnection().Db,
+				database2.GetConnection().Db,
 			},
 			tds: stubMongoDataStore{},
 			se: se,

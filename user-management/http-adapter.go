@@ -1,6 +1,8 @@
 package user_management
 
 import (
+	"Stringtheory-API/drivers/router"
+	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"Stringtheory-API/shared"
 )
@@ -8,27 +10,15 @@ import (
 type moduleHttpAdapter struct {}
 
 func (mha moduleHttpAdapter) InitializeAdapter() {
-	http.HandleFunc("/users", shared.Authenticate(mha.handleUsers))
+	r := router.GetRouter()
+	r.PATCH("/users", shared.Authenticate(mha.edit))
+	r.DELETE("/users", shared.Authenticate((mha.delete)))
 }
 
-func (mha moduleHttpAdapter) handleUsers(w http.ResponseWriter, req *http.Request) {
-	switch req.Method {
-	case http.MethodPatch:
-		mha.edit(w, req)
-		break
-	case http.MethodDelete:
-		mha.delete(w, req)
-		break
-	default:
-		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a POST, PATCH or DELETE request to this endpoint", http.StatusNotFound)
-		return
-	}
-}
-
-func (mha moduleHttpAdapter) edit(w http.ResponseWriter, req *http.Request) {
+func (mha moduleHttpAdapter) edit(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 
 }
 
-func (mha moduleHttpAdapter) delete(w http.ResponseWriter, req *http.Request) {
+func (mha moduleHttpAdapter) delete(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 
 }

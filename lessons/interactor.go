@@ -3,10 +3,6 @@ package lessons
 import "Stringtheory-API/shared"
 
 func loadCourseLessons(cI string) ([]shared.Lesson, error) {
-    _, err := getCourse(cI)
-    if err != nil {
-    	return nil, err
-	}
 	l, err := sm.DataStore().getCourseLessons(cI)
 	if err != nil {
 		return l, err

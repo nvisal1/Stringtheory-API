@@ -1,8 +1,8 @@
 package user_curriculum_progress
 
 import (
+	database2 "Stringtheory-API/drivers/database"
 	"os"
-	database "Stringtheory-API/drivers"
 )
 
 var sm serviceModule
@@ -19,7 +19,7 @@ func InitializeModule() {
 		sm = serviceModule{
 			ha: moduleHttpAdapter{},
 			ds: moduleMongoDataStore {
-				database.GetConnection().Db,
+				database2.GetConnection().Db,
 			},
 			tds: stubMongoDataStore{},
 			se: se,

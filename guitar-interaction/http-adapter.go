@@ -2,14 +2,13 @@ package guitar_interaction
 
 import (
 	"net/http"
-	"Stringtheory-API/shared"
 )
 
 func initializeAdapter() {
 	hub := newHub()
 	go hub.run()
-	http.HandleFunc("/play", shared.Authenticate(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/play", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(hub, w, r)
-	}))
+	})
 }
 

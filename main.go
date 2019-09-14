@@ -1,11 +1,9 @@
 package main
 
 import (
-	env "github.com/joho/godotenv"
-	"io"
-	"log"
-	"net/http"
 	"Stringtheory-API/courses"
+	"Stringtheory-API/drivers/database"
+	"Stringtheory-API/drivers/router"
 	"Stringtheory-API/exercises"
 	"Stringtheory-API/game"
 	guitar_interaction "Stringtheory-API/guitar-interaction"
@@ -13,8 +11,11 @@ import (
 	user_authentication "Stringtheory-API/user-authentication"
 	user_curriculum_progress "Stringtheory-API/user-curriculum-progress"
 	user_management "Stringtheory-API/user-management"
-
-	database "Stringtheory-API/drivers"
+	env "github.com/joho/godotenv"
+	"github.com/julienschmidt/httprouter"
+	"io"
+	"log"
+	"net/http"
 )
 
 // init is responsible for creating all of the necessary
@@ -38,6 +39,7 @@ import (
 func init() {
 	env.Load()
 	database.Build()
+	router.Build()
 	initializeServiceModules()
 }
 
@@ -59,10 +61,11 @@ func initializeServiceModules() {
 // main calls http.ListenAndServe to start the API.
 // The service will exit if an error occurs
 func main() {
-	http.HandleFunc("/", index)
-	log.Fatal(http.ListenAndServe(":5000", nil))
+	r := router.GetRouter()
+	r.GET("/", index)
+	log.Fatal(http.ListenAndServe(":5000", r))
 }
 
-func index(w http.ResponseWriter, req *http.Request) {
+func index(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 	io.WriteString(w, "Welcome to the Stringtheory API!\n")
 }
