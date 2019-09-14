@@ -13,6 +13,7 @@ import (
 	user_management "Stringtheory-API/user-management"
 	env "github.com/joho/godotenv"
 	"github.com/julienschmidt/httprouter"
+	"github.com/rs/cors"
 	"io"
 	"log"
 	"net/http"
@@ -63,7 +64,14 @@ func initializeServiceModules() {
 func main() {
 	r := router.GetRouter()
 	r.GET("/", index)
-	log.Fatal(http.ListenAndServe(":5000", r))
+	c := cors.New(cors.Options{
+		AllowedOrigins: []string{"http://localhost:3000"},
+		AllowCredentials: true,
+		AllowedHeaders: []string{"Authorization", "Content-Type"},
+		Debug: true,
+	})
+	handler := c.Handler(r)
+	log.Fatal(http.ListenAndServe(":5000", handler))
 }
 
 func index(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
