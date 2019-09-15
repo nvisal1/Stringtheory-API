@@ -15,8 +15,8 @@ func (mha moduleHttpAdapter) InitializeAdapter() {
 	r.GET("/courses/:courseId/lessons/:lessonId/exercises", shared.Authenticate(mha.getLessonExercises))
 }
 
-func (mha moduleHttpAdapter) getLessonExercises(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
-	lI := req.FormValue("lessonId")
+func (mha moduleHttpAdapter) getLessonExercises(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
+	lI := p.ByName("lessonId")
 	c, err := loadLessonExercises(lI)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)

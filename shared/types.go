@@ -31,7 +31,7 @@ type Lesson struct {
 }
 
 type Exercise struct {
-	Id string
+	ID string
 	Name string
 	Order int32
 	Notes []string
