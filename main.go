@@ -65,7 +65,7 @@ func main() {
 	r := router.GetRouter()
 	r.GET("/", index)
 	c := cors.New(cors.Options{
-		AllowedOrigins: []string{"http://localhost:3000"},
+		AllowedOrigins: []string{"*"},
 		AllowCredentials: true,
 		AllowedHeaders: []string{"Authorization", "Content-Type"},
 		Debug: true,
