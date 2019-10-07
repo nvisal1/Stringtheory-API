@@ -12,7 +12,7 @@ type moduleHttpAdapter struct {}
 func (mha moduleHttpAdapter) InitializeAdapter() {
 	r := router.GetRouter()
 	r.POST(
-		"/users/:userId/courses/:courseId/lessons/:lessonId/exercises/:exerciseId/complete",
+		"/users/:userId/courses/:courseId/lessons/:lessonId/exercises/:exerciseId/completion",
 		shared.Authenticate(mha.completeExercise))
 }
 

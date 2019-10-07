@@ -3,22 +3,25 @@ package user_curriculum_progress
 import "time"
 
 type completedCourse struct {
-	username string
-	courseId string
-	date time.Time
+	ID string
+	Username string
+	CourseId string
+	Date time.Time
 }
 
 type completedLesson struct {
-	username string
-	lessonId string
-	date time.Time
+	ID string
+	Username string
+	LessonId string
+	Date time.Time
 }
 
 type completedExercise struct {
-	username string
-	exerciseId string
-	date time.Time
-	score float64
+	ID string
+	Username string
+	ExerciseId string
+	Date time.Time
+	Score float64
 }
 
 
@@ -26,6 +29,8 @@ type dataStore interface {
 	createCompletedCourse(cc completedCourse) error
 	createCompletedLesson(cL completedLesson) error
 	createCompletedExercise(cE completedExercise) error
+	getCompletedLesson(uN string) (completedLesson, error)
+	getCompletedCourse(uN string) (completedCourse, error)
 }
 
 type httpAdapter interface {

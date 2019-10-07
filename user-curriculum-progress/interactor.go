@@ -8,12 +8,8 @@ func completeCourse(uN string, cI string) error {
     if err != nil {
     	return err
 	}
-	// get user to verify existence
-	_, err = getUser(uN)
-	if err != nil {
-		return err
-	}
 	// make sure that the user hasn't completed the course already
+
 
 	cC := completedCourse{
 		uN,
@@ -27,11 +23,6 @@ func completeCourse(uN string, cI string) error {
 func completeLesson(uN string, lI string) error {
 	// get lesson to verify existence
 	l, err := getLesson(lI)
-	if err != nil {
-		return err
-	}
-	// get user to verify existence
-	_, err = getUser(uN)
 	if err != nil {
 		return err
 	}
