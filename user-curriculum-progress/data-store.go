@@ -64,7 +64,7 @@ func (mmds moduleMongoDataStore) getCompletedCourse(uN string) (completedCourse,
 
 	filter := bson.D{{"username", uN}}
 
-	cur, err := mmds.db.Collection("Completed-Lessons").Find(context.TODO(), filter)
+	cur, err := mmds.db.Collection("Completed-Courses").Find(context.TODO(), filter)
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			return result[0], err

@@ -63,6 +63,7 @@ func completeExercise(uN string, eI string, score float64) error {
 	}
 
 	cE := completedExercise{
+		'',
 		uN,
 		eI,
 		time.Now(),
