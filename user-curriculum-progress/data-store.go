@@ -1,9 +1,7 @@
 package user_curriculum_progress
 
 import (
-	"Stringtheory-API/shared"
 	"context"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/bson"
 	"log"
@@ -49,7 +47,6 @@ func (mmds moduleMongoDataStore) getCompletedLesson(uN string) (completedLesson,
 		}
 		m := elem.Map()
 		c := completedLesson{
-			ID:         m["_id"].(primitive.ObjectID).Hex(),
 			Username: m["Username"].(string),
 			LessonId: m["LessonId"].(string),
 			Date: m["Date"].(time.Time),
@@ -79,7 +76,6 @@ func (mmds moduleMongoDataStore) getCompletedCourse(uN string) (completedCourse,
 		}
 		m := elem.Map()
 		c := completedCourse{
-			ID:         m["_id"].(primitive.ObjectID).Hex(),
 			Username: m["Username"].(string),
 			CourseId: m["CourseId"].(string),
 			Date: m["Date"].(time.Time),

@@ -3,21 +3,18 @@ package user_curriculum_progress
 import "time"
 
 type completedCourse struct {
-	ID string
 	Username string
 	CourseId string
 	Date time.Time
 }
 
 type completedLesson struct {
-	ID string
 	Username string
 	LessonId string
 	Date time.Time
 }
 
 type completedExercise struct {
-	ID string
 	Username string
 	ExerciseId string
 	Date time.Time

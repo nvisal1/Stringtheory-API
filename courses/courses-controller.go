@@ -1,6 +1,7 @@
 package courses
 
 import (
+	"Stringtheory-API/shared"
 	"errors"
 	"os"
 )
