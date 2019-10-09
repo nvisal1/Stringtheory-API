@@ -1,6 +1,7 @@
-package courses
+package http
 
 import (
+	"Stringtheory-API/courses"
 	"Stringtheory-API/drivers/router"
 	"Stringtheory-API/shared"
 	"encoding/json"
@@ -8,12 +9,12 @@ import (
 	"net/http"
 )
 
-type moduleHttpAdapter struct {}
+type ModuleHttpAdapter struct {}
 
 // InitializeAdapter is required by the shared/Adapters
 // The function is responsible for setting http routes
 // for this module
-func (mha moduleHttpAdapter) InitializeAdapter() {
+func (mha ModuleHttpAdapter) InitializeAdapter() {
 	r := router.GetRouter()
 	r.GET("/courses", shared.Authenticate(mha.getCourses))
 }
@@ -24,8 +25,8 @@ func (mha moduleHttpAdapter) InitializeAdapter() {
 // If it is, the function will call loadAllCourses in the module
 // controller. The response from loadAllCourses is converted to a JSON
 // object and returned to the client.
-func (mha moduleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
-	c, err := loadAllCourses()
+func (mha ModuleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
+	c, err := courses.loadAllCourses()
 	if err != nil {
 		http.Error(
 			w,
@@ -41,17 +42,5 @@ func (mha moduleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request
 	}
 	w.Header().Set("content-type", "application/json")
 	w.Write(e)
-}
-
-// getCourse handles incoming requests to /courses/:courseId.
-// This functionality is not implemented.
-func (mha moduleHttpAdapter) getCourse(w http.ResponseWriter, req *http.Request) {
-	if req.Method == http.MethodGet {
-		http.Error(w, http.StatusText(http.StatusNotImplemented), http.StatusNotImplemented)
-		return
-	} else {
-		http.Error(w, http.StatusText(http.StatusNotFound) + " Hint: try making a GET request to this endpoint", http.StatusNotFound)
-		return
-	}
 }
 

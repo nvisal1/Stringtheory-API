@@ -1,4 +1,4 @@
-package courses
+package drivers
 
 import (
 	"Stringtheory-API/shared"
@@ -9,13 +9,13 @@ import (
 	"log"
 )
 
-type moduleMongoDataStore struct {
+type ModuleMongoDataStore struct {
 	db *mongo.Database
 }
 
 // getAllCourses is responsible for finding and returning all
 // documents in the Courses collection.
-func (mmds moduleMongoDataStore) getAllCourses() ([]shared.Course, error) {
+func (mmds ModuleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 	var result []shared.Course
 
 	filter := bson.D{{}}
@@ -48,7 +48,7 @@ func (mmds moduleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 // a single document in the Courses collection
 // that matches the given course id. If no result
 // is found, the function returns an error.
-func (mmds moduleMongoDataStore) getCourse(cI string) (shared.Course, error) {
+func (mmds ModuleMongoDataStore) getCourse(cI string) (shared.Course, error) {
 	var result shared.Course
 
 	filter := bson.D{{"_id", cI}}

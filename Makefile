@@ -1,0 +1,1 @@
+build: bin/$(OS)_$(ARCH)/$(BIN)
