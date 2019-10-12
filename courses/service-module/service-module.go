@@ -7,11 +7,18 @@ import (
 	"os"
 )
 
-var CoursesModule ServiceModule
+var CoursesModule *ServiceModule
 
 type ServiceModule struct {
 	HttpAdapter sharedTypes.Adapter
 	Datastore localInterfaces.Datastore
+}
+
+func NewCoursesModule(httpAdapter sharedTypes.Adapter, datastore localInterfaces.Datastore) {
+	CoursesModule = &ServiceModule{
+		HttpAdapter: httpAdapter,
+		Datastore:   datastore,
+	}
 }
 
 func (module ServiceModule) ResetDatastore(datastore localInterfaces.Datastore) error {

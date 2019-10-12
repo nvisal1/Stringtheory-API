@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dc63c60-7f61-49d3-8fae-5bcfadd0765d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/courses/usecases/load-course/load-course.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/courses/usecases/load-course/load-course_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/error-types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/model-mappers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/adapters/http/http-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/adapters/http/http-adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/adapters/internal/internal-adapter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/controllers/courses-controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/controllers/courses_controller_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/courses/drivers/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/drivers/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/drivers/test-data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/drivers/test-data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/interfaces/datastore.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/interfaces/datastore.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/service-module/service-module.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/courses-gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/courses-gateway.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/courses-gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/courses-gateway.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses/service-module/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/service-module/service-module.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses/usecases/load-course/load-course_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/usecases/load-course/load-course_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

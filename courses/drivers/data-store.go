@@ -50,7 +50,7 @@ func (datastore ModuleMongoDataStore) GetAllCourses() ([]shared.Course, error) {
 // a single document in the Courses collection
 // that matches the given course id. If no result
 // is found, the function returns an error.
-func (datastore ModuleMongoDataStore) getCourse(cI string) (shared.Course, error) {
+func (datastore ModuleMongoDataStore) GetCourse(cI string) (shared.Course, error) {
 	var result shared.Course
 
 	filter := bson.D{{"_id", cI}}

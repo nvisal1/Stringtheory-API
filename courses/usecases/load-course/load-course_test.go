@@ -2,16 +2,16 @@ package load_course
 
 import (
 	"Stringtheory-API/courses/drivers"
-	service_module "Stringtheory-API/courses/service-module"
-	. "github.com/smartystreets/goconvey/convey"
+	. "Stringtheory-API/courses/service-module"
 	"Stringtheory-API/shared"
+	. "github.com/smartystreets/goconvey/convey"
 	"os"
 	"testing"
 )
 
 func TestMain(m *testing.M) {
 	os.Setenv("SERVICE_ENVIRONMENT", "test")
-	service_module.CoursesModule = service_module.ServiceModule{nil, drivers.StubMongoDataStore{}}
+	NewCoursesModule(nil, drivers.StubMongoDataStore{})
 }
 
 func TestLoadCourse(t *testing.T) {
