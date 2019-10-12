@@ -1,14 +1,15 @@
 package courses
 
 import (
-	"Stringtheory-API/courses/adapters"
 	"Stringtheory-API/courses/adapters/http"
 	"Stringtheory-API/courses/drivers"
-	database "Stringtheory-API/drivers/database"
+	localInterfaces "Stringtheory-API/courses/interfaces"
+	"Stringtheory-API/courses/service-module"
+	"Stringtheory-API/drivers/database"
+	"errors"
 	"log"
+	"os"
 )
-
-var CoursesModule serviceModule
 
 // InitializeModule is an exported function.
 //
@@ -17,22 +18,28 @@ var CoursesModule serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
-	datastore, err := createModuleDataStore()
+	datastore, err := selectDatastore()
 	if err != nil {
 		log.Fatal(err)
 	}
-	CoursesModule = serviceModule{
+	service_module.CoursesModule = service_module.ServiceModule{
 		http.ModuleHttpAdapter{},
-		adapters.InternalAdapter{},
 		datastore,
 	}
-	CoursesModule.httpAdapter.InitializeAdapter()
-	CoursesModule.internalAdapter.InitializeAdapter()
+	service_module.CoursesModule.HttpAdapter.InitializeAdapter()
 }
 
-func createModuleDataStore() (Datastore, error) {
-	datastore := drivers.ModuleMongoDataStore{
-			database.GetConnection().Db,
+func selectDatastore() (localInterfaces.Datastore, error) {
+	serviceEnvironment, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
+	if exists {
+		if serviceEnvironment == "test" {
+			return drivers.StubMongoDataStore{} ,nil
+		} else {
+			return drivers.ModuleMongoDataStore{
+				database.GetConnection().Db,
+			}, nil
+		}
+		return drivers.StubMongoDataStore{}, errors.New("the service environment variable is not set")
 	}
-	return datastore, nil
+	return drivers.StubMongoDataStore{}, errors.New("a module's datastore can only be reset when the service environment is set to test")
 }

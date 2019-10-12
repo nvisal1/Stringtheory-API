@@ -5,10 +5,10 @@ import (
 	"Stringtheory-API/shared"
 )
 
-type stubMongoDataStore struct {}
+type StubMongoDataStore struct {}
 
-func (smds stubMongoDataStore) getAllCourses() ([]shared.Course, error) {
-	courses := make([]shared.Course, 1)
+func (smds StubMongoDataStore) GetAllCourses() ([]shared.Course, error) {
+	courses := make([]shared.Course, 0)
 	c := shared.Course{
 		"test",
 		"test",
@@ -19,7 +19,7 @@ func (smds stubMongoDataStore) getAllCourses() ([]shared.Course, error) {
 	return res, nil
 }
 
-func (smds stubMongoDataStore) getCourse(cI string) (shared.Course, error) {
+func (smds StubMongoDataStore) GetCourse(cI string) (shared.Course, error) {
 	c := shared.Course{
 		"test",
 		"test",

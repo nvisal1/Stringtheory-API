@@ -1,4 +1,4 @@
-package courses
+package service_module
 
 import (
 	localInterfaces "Stringtheory-API/courses/interfaces"
@@ -7,17 +7,18 @@ import (
 	"os"
 )
 
-type serviceModule struct {
-	httpAdapter sharedTypes.Adapter
-	internalAdapter sharedTypes.Adapter
-	datastore localInterfaces.Datastore
+var CoursesModule ServiceModule
+
+type ServiceModule struct {
+	HttpAdapter sharedTypes.Adapter
+	Datastore localInterfaces.Datastore
 }
 
-func (module serviceModule) ResetDatastore(datastore localInterfaces.Datastore) error {
+func (module ServiceModule) ResetDatastore(datastore localInterfaces.Datastore) error {
 	serviceEnvironment, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
 	if exists {
 		if serviceEnvironment == "test" {
-			module.datastore = datastore
+			module.Datastore = datastore
 			return nil
 		}
 		return errors.New("the service environment variable is not set")

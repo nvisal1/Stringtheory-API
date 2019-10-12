@@ -10,17 +10,17 @@ import (
 )
 
 type ModuleMongoDataStore struct {
-	db *mongo.Database
+	DB *mongo.Database
 }
 
 // getAllCourses is responsible for finding and returning all
 // documents in the Courses collection.
-func (mmds ModuleMongoDataStore) getAllCourses() ([]shared.Course, error) {
+func (datastore ModuleMongoDataStore) GetAllCourses() ([]shared.Course, error) {
 	var result []shared.Course
 
 	filter := bson.D{{}}
 
-	cur, err := mmds.db.Collection("Courses").Find(context.TODO(), filter)
+	cur, err := datastore.DB.Collection("Courses").Find(context.TODO(), filter)
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			return result, err
@@ -34,10 +34,12 @@ func (mmds ModuleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 			return result, err
 		}
 		m := elem.Map()
-		c := shared.Course{
-			ID:         m["_id"].(primitive.ObjectID).Hex(),
-			Name:  m["Name"].(string),
-			Description: m["Description"].(string),
+		ID := m["_id"].(primitive.ObjectID).Hex()
+		name := m["Name"].(string)
+		description :=  m["Description"].(string)
+		c, err := shared.GenerateCourseFromStoredData(ID, name, description)
+		if err != nil {
+			return result, err
 		}
 		result = append(result, c)
 	}
@@ -48,12 +50,12 @@ func (mmds ModuleMongoDataStore) getAllCourses() ([]shared.Course, error) {
 // a single document in the Courses collection
 // that matches the given course id. If no result
 // is found, the function returns an error.
-func (mmds ModuleMongoDataStore) getCourse(cI string) (shared.Course, error) {
+func (datastore ModuleMongoDataStore) getCourse(cI string) (shared.Course, error) {
 	var result shared.Course
 
 	filter := bson.D{{"_id", cI}}
 
-	err := mmds.db.Collection("Courses").FindOne(context.TODO(), filter).Decode(&result)
+	err := datastore.DB.Collection("Courses").FindOne(context.TODO(), filter).Decode(&result)
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			return result, err

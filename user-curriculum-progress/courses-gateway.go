@@ -1,11 +1,11 @@
 package user_curriculum_progress
 
 import (
-	"Stringtheory-API/courses/adapters/internal"
+	. "Stringtheory-API/courses/usecases/load-course"
 	"Stringtheory-API/shared"
 )
 
-func getCourse(cI string) (shared.Course, error) {
-	c, err := internal.GetInstance().LoadCourse(cI)
+func getCourse(courseID string) (shared.Course, error) {
+	c, err := LoadCourse(courseID)
 	return c, err
 }

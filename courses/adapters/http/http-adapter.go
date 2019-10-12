@@ -1,7 +1,7 @@
 package http
 
 import (
-	"Stringtheory-API/courses"
+	. "Stringtheory-API/courses/usecases/load-all-courses"
 	"Stringtheory-API/drivers/router"
 	"Stringtheory-API/shared"
 	"encoding/json"
@@ -26,7 +26,7 @@ func (mha ModuleHttpAdapter) InitializeAdapter() {
 // controller. The response from loadAllCourses is converted to a JSON
 // object and returned to the client.
 func (mha ModuleHttpAdapter) getCourses(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
-	c, err := courses.loadAllCourses()
+	c, err := LoadAllCourses()
 	if err != nil {
 		http.Error(
 			w,
