@@ -18,7 +18,7 @@ func TestLoadAllCourses(t *testing.T) {
 	Convey("When LoadAllCourses is called", t, func() {
 		courses, err := LoadAllCourses()
 
-		Convey("And no driver error occur", func() {
+		Convey("and no driver error occur", func() {
 			expectedResponse := []shared.Course{{"test", "test", "test", "test"}}
 
 			Convey("a slice of Course should be returned without error", func() {

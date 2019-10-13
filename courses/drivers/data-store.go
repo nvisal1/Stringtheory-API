@@ -37,7 +37,7 @@ func (datastore ModuleMongoDataStore) GetAllCourses() ([]shared.Course, error) {
 		ID := m["_id"].(primitive.ObjectID).Hex()
 		name := m["Name"].(string)
 		description :=  m["Description"].(string)
-		c, err := shared.GenerateCourseFromStoredData(ID, name, description)
+		c, err := shared.NewCourse(ID, name, description)
 		if err != nil {
 			return result, err
 		}

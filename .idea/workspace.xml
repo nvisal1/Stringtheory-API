@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dc63c60-7f61-49d3-8fae-5bcfadd0765d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/exercises/interfaces/data-store.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/usecases/load-lesson-exercises/load-lesson-exercises.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/usecases/load-lesson-exercises/load-lesson-exercises_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses/drivers/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/drivers/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/service-module/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/service-module/service-module.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/usecases/load-all-courses/load-all-courses_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/usecases/load-course/load-course_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/courses/usecases/load-course/load-course_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/drivers/data-store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercises-adapter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercises-controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/usecases/load-exercise/load-exercise.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercises_controller_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/usecases/load-exercise/load-exercise_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/http-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/adapters/http/http-adapter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/service-module/service-module.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/test-data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/drivers/test-data-store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/types.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/error-types.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/error-types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/model-mappers.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/model-mappers.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/courses/service-module" />
-      <recent name="$PROJECT_DIR$/courses/adapters/internal" />
-      <recent name="$PROJECT_DIR$/courses/adapters/http" />
-      <recent name="$PROJECT_DIR$/courses/drivers" />
-      <recent name="$PROJECT_DIR$/courses/controllers" />
+      <recent name="$PROJECT_DIR$/exercises/usecases/load-exercise" />
+      <recent name="$PROJECT_DIR$/exercises/usecases/\" />
+      <recent name="$PROJECT_DIR$/exercises/usecases" />
+      <recent name="$PROJECT_DIR$/exercises/service-module" />
+      <recent name="$PROJECT_DIR$/exercises/drivers" />
     </key>
   </component>
   <component name="RunDashboard">

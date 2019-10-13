@@ -19,6 +19,19 @@ type ServiceError struct {
 	errType  string
 }
 
+func NewServiceError(err string, errType string) *ServiceError {
+	serviceError := &ServiceError{err, errType}
+	return serviceError
+}
+
+func (serviceError ServiceError) ErrorType() string {
+	return serviceError.errType
+}
+
+func (serviceErorr ServiceError) Error() string {
+	return serviceErorr.err
+}
+
 func (errorTypes errorTypes) mapErrorToHttpStatus(errorType string) int {
 	switch errorType {
 	case ErrorTypes.BadRequest:
