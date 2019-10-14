@@ -12,7 +12,7 @@ import (
 
 func TestMain(m *testing.M) {
 	os.Setenv("SERVICE_ENVIRONMENT", "test")
-	NewLessonsModule(nil, StubMongoDataStore{}, StubServiceCommunicator{} )
+	NewLessonsModule(nil, StubMongoDataStore{}, StubServiceCommunicator{})
 }
 
 func TestLoadCourseLessons(t *testing.T) {

@@ -1,11 +1,12 @@
 package user_authentication
 
 import (
-"os"
+	. "Stringtheory-API/user-authentication/adapters/http"
+	. "Stringtheory-API/user-authentication/drivers/password-service"
+	. "Stringtheory-API/user-authentication/drivers/service-communication"
+	. "Stringtheory-API/user-authentication/drivers/token-generator"
+	. "Stringtheory-API/user-authentication/service-module"
 )
-
-
-var sm serviceModule
 
 // InitializeModule is an exported function.
 //
@@ -14,12 +15,11 @@ var sm serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
-	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
-	if exists {
-		sm = serviceModule{
-			moduleHttpAdapter{},
-			se,
-		}
-		sm.ha.InitializeAdapter()
-	}
+	passwordService := NewBcryptPasswordService()
+	tokenGenerator := NewJWTGenerator()
+	serviceCommunicator := NewServiceCommunicator()
+	httpAdapter := NewHttpAdapter()
+
+	NewUserAuthenticationModule(httpAdapter, passwordService, tokenGenerator, serviceCommunicator)
+	UserAuthenticationModule.HttpAdapter.InitializeAdapter()
 }

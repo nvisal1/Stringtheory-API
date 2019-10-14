@@ -2,24 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dc63c60-7f61-49d3-8fae-5bcfadd0765d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lessons/drivers/service-communication/test-service-communicator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/interfaces/data-store.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/interfaces/service-communicator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/usecases/load-course-lessons/load-course-lesson.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/usecases/load-course-lessons/load-course-lesson_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/usecases/load-lesson/load-lesson.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons/usecases/load-lesson/load-lesson_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/drivers/password-service/test-password-service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/drivers/service-communication/test-service-communicator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/drivers/token-generator/test-token-generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/interfaces/password-service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/interfaces/service-communication.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/interfaces/token-generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/types/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/usecases/login/login_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/usecases/register/register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-authentication/usecases/register/register_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/courses-gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/drivers/service-communication/service-communicator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/drivers/data-store/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/http-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/adapters/http/http-adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/interactor.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/lessons-adapter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/service-module/service-module.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/test-data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/drivers/data-store/test-data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lessons/types.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/model-mappers.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/model-mappers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessons/usecases/load-course-lessons/load-course-lesson_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/lessons/usecases/load-course-lessons/load-course-lesson_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/http-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/adapters/http/http-adapter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/interactor.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/password-manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/drivers/password-service/password-service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/service-module/service-module.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/token-manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/drivers/token-generator/token-generator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/types.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-authentication/user-management-gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-authentication/drivers/service-communication/service-communicator.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lessons/adapters/http" />
-      <recent name="$PROJECT_DIR$/lessons/drivers/service-communication" />
-      <recent name="$PROJECT_DIR$/lessons/drivers/data-store" />
-      <recent name="$PROJECT_DIR$/lessons/drivers" />
-      <recent name="$PROJECT_DIR$/lessons/service-module" />
+      <recent name="$PROJECT_DIR$/user-authentication/types" />
+      <recent name="$PROJECT_DIR$/user-authentication/drivers/password-service" />
+      <recent name="$PROJECT_DIR$/user-authentication/drivers/token-generator" />
+      <recent name="$PROJECT_DIR$/user-authentication/drivers/token" />
+      <recent name="$PROJECT_DIR$/user-authentication/drivers/password" />
     </key>
   </component>
   <component name="RunDashboard">

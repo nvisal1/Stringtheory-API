@@ -1,20 +1,27 @@
-package user_authentication
+package http
 
 import (
 	"Stringtheory-API/drivers/router"
 	"Stringtheory-API/shared"
+	"Stringtheory-API/user-authentication/types"
+	. "Stringtheory-API/user-authentication/usecases/login"
+	. "Stringtheory-API/user-authentication/usecases/register"
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
 	"io/ioutil"
 	"net/http"
 )
 
-type moduleHttpAdapter struct{}
+type HttpAdapter struct{}
 
-func (mha moduleHttpAdapter) InitializeAdapter() {
+func NewHttpAdapter() *HttpAdapter {
+	return &HttpAdapter{}
+}
+
+func (adapter HttpAdapter) InitializeAdapter() {
 	r := router.GetRouter()
-	r.POST("/login", mha.login)
-	r.POST("/register", mha.register)
+	r.POST("/login", adapter.login)
+	r.POST("/register", adapter.register)
 }
 
 // login checks to ensure that the incoming request is a
@@ -33,63 +40,63 @@ func (mha moduleHttpAdapter) InitializeAdapter() {
 // If no errors are returned from the generateToken function,
 // the variable of type UserToken is encoded and returned
 // to the client.
-func (mha moduleHttpAdapter) login(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
-	b, err := ioutil.ReadAll(req.Body)
+func (adapter HttpAdapter) login(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
+	body, err := ioutil.ReadAll(req.Body)
 	defer req.Body.Close()
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	var u loginCredentials
-	err = json.Unmarshal(b, &u)
+	var loginCredentials types.LoginCredentials
+	err = json.Unmarshal(body, &loginCredentials)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	ut, err := processLogin(u)
+	userToken, err := Login(loginCredentials)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusUnauthorized)+" "+err.Error(), http.StatusUnauthorized)
 		return
 	}
 
-	e, err := json.Marshal(ut)
+	response, err := json.Marshal(userToken)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 	w.Header().Set("content-type", "application/json")
-	w.Write(e)
+	w.Write(response)
 }
 
-func (mha moduleHttpAdapter) register(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
-	b, err := ioutil.ReadAll(req.Body)
+func (adapter HttpAdapter) register(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
+	body, err := ioutil.ReadAll(req.Body)
 	defer req.Body.Close()
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	var u shared.User
-	err = json.Unmarshal(b, &u)
+	var user shared.User
+	err = json.Unmarshal(body, &user)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	ut, err := processRegistration(u)
+	userToken, err := Register(user)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusBadRequest)+" "+err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	e, err := json.Marshal(ut)
+	response, err := json.Marshal(userToken)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError)+" "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	w.Header().Set("content-type", "application/json")
-	w.Write(e)
+	w.Write(response)
 }
