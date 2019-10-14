@@ -1,23 +1,24 @@
-package lessons
+package http
 
 import (
 	"Stringtheory-API/drivers/router"
+	. "Stringtheory-API/lessons/usecases/load-course-lessons"
+	"Stringtheory-API/shared"
 	"encoding/json"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
-	"Stringtheory-API/shared"
 )
 
-type moduleHttpAdapter struct {}
+type ModuleHttpAdapter struct {}
 
-func (mha moduleHttpAdapter) InitializeAdapter() {
+func (adapter ModuleHttpAdapter) InitializeAdapter() {
 	r := router.GetRouter()
-	r.GET("/courses/:courseId/lessons", shared.Authenticate(mha.getCourseLessons))
+	r.GET("/courses/:courseId/lessons", shared.Authenticate(adapter.getCourseLessons))
 }
 
-func (mha moduleHttpAdapter) getCourseLessons(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
-	cI := p.ByName("courseId")
-	c, err := loadCourseLessons(cI)
+func (adapter ModuleHttpAdapter) getCourseLessons(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
+	courseID := p.ByName("courseId")
+	c, err := LoadCourseLessons(courseID)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError) + " " + err.Error(), http.StatusInternalServerError)
 		return

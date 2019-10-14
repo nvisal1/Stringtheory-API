@@ -1,11 +1,12 @@
 package lessons
 
 import (
-	database2 "Stringtheory-API/drivers/database"
-	"os"
+	"Stringtheory-API/drivers/database"
+	. "Stringtheory-API/lessons/adapters/http"
+	. "Stringtheory-API/lessons/drivers/data-store"
+	. "Stringtheory-API/lessons/drivers/service-communication"
+	. "Stringtheory-API/lessons/service-module"
 )
-
-var sm serviceModule
 
 // InitializeModule is an exported function.
 //
@@ -14,19 +15,11 @@ var sm serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
-	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
-	if exists {
-		sm = serviceModule{
-			ha: moduleHttpAdapter{},
-			ia: lessonsAdapter{},
-			ds: moduleMongoDataStore {
-				database2.GetConnection().Db,
-			},
-			tds: stubMongoDataStore{},
-			se: se,
-		}
-		sm.ha.InitializeAdapter()
-		sm.ia.InitializeAdapter()
-	}
+	datastore := ModuleMongoDataStore{database.GetConnection().Db}
+	httpAdapter := ModuleHttpAdapter{}
+    serviceCommunicator := ServiceCommunicator{}
+
+	NewLessonsModule(httpAdapter, datastore, serviceCommunicator)
+    LessonsModule.HttpAdapter.InitializeAdapter()
 }
 
