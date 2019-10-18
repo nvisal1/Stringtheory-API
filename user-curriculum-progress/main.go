@@ -1,11 +1,13 @@
 package user_curriculum_progress
 
 import (
-	database2 "Stringtheory-API/drivers/database"
-	"os"
-)
+	"Stringtheory-API/drivers/database"
+	. "Stringtheory-API/user-curriculum-progress/adapter/http"
+	. "Stringtheory-API/user-curriculum-progress/drivers/data-store"
+	. "Stringtheory-API/user-curriculum-progress/drivers/service-communication"
+	. "Stringtheory-API/user-curriculum-progress/service-module"
 
-var sm serviceModule
+)
 
 // InitializeModule is an exported function.
 //
@@ -14,16 +16,10 @@ var sm serviceModule
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
-	se, exists := os.LookupEnv("SERVICE_ENVIRONMENT")
-	if exists {
-		sm = serviceModule{
-			ha: moduleHttpAdapter{},
-			ds: moduleMongoDataStore {
-				database2.GetConnection().Db,
-			},
-			tds: stubMongoDataStore{},
-			se: se,
-		}
-		sm.ha.InitializeAdapter()
-	}
+	httpAdapter := NewHttpAdapter()
+	datastore := NewDatastore(database.GetConnection().Db)
+	serviceCommunicator := NewServiceCommunicator()
+
+	NewUserCurriculumProgressModule(httpAdapter, datastore, serviceCommunicator)
+	UserCurriculumProgressModule.HttpAdapter.InitializeAdapter()
 }
