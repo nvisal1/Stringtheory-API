@@ -2,7 +2,7 @@ package interfaces
 
 import . "Stringtheory-API/user-curriculum-progress/types"
 
-type Datastore interface {
+type DataStore interface {
 	CreateCompletedCourse(completedCourse *CompletedCourse) error
 	CreateCompletedLesson(completedLesson CompletedLesson) error
 	CreateCompletedExercise(completedExercise CompletedExercise) error

@@ -9,18 +9,24 @@ var UserCurriculumProgressModule *ServiceModule
 
 type ServiceModule struct {
 	HttpAdapter  shared.Adapter
-	Datastore interfaces.Datastore
+	QueueAdapter shared.Adapter
+	DataStore interfaces.DataStore
+	MessageStore interfaces.MessageStore
 	ServiceCommunicator interfaces.ServiceCommunicator
 }
 
 func NewUserCurriculumProgressModule(
 	httpAdapter shared.Adapter,
-	datastore interfaces.Datastore,
+	queueAdapter shared.Adapter,
+	dataStore interfaces.DataStore,
+	messageStore interfaces.MessageStore,
 	serviceCommunicator interfaces.ServiceCommunicator,
 ) {
 	UserCurriculumProgressModule = &ServiceModule{
-		httpAdapter:         httpAdapter,
-		Datastore:           datastore,
+		HttpAdapter:         httpAdapter,
+		QueueAdapter:        queueAdapter,
+		DataStore:           dataStore,
+		MessageStore:        messageStore,
 		ServiceCommunicator: serviceCommunicator,
 	}
 }

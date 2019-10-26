@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dc63c60-7f61-49d3-8fae-5bcfadd0765d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/data-store/test-data-store.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/service-communication/service-communicator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/service-communication/test-service-communicator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/data-store.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/service-communication.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/types/types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-course/complete-course.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-course/complete-course_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-exercise/complete-exercise.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-exercise/complete-exercise_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-lesson/complete-lesson.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-lesson/complete-lesson_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/adapter/queue/queue-adapter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/message-store/SQS/SQS-message-store.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/message-store.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/courses-gateway.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/data-store/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/exercises-gateway.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/http-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/adapter/http/http-adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/interactor.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/lessons-gateway.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/interfaces/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/data-store.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-curriculum-progress/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/service-module/service-module.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/test-date-store.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/types.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/user-management-gateway.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/service-module/service-module.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/service-module/service-module.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/types/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/types/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-course/complete-course.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-course/complete-course.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +54,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user-curriculum-progress/adapter/queue" />
       <recent name="$PROJECT_DIR$/user-curriculum-progress/drivers/service-communication" />
       <recent name="$PROJECT_DIR$/user-curriculum-progress/types" />
       <recent name="$PROJECT_DIR$/user-curriculum-progress/service-module" />
       <recent name="$PROJECT_DIR$/user-curriculum-progress/drivers/data-store" />
-      <recent name="$PROJECT_DIR$/user-curriculum-progress/drivers" />
     </key>
   </component>
   <component name="RunDashboard">

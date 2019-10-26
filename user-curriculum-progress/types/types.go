@@ -21,6 +21,11 @@ type CompletedExercise struct {
 	Score float64
 }
 
+type Message struct{
+	Body string
+	Attributes map[string]interface{}
+}
+
 func NewCompletedCourse(username string, courseID string, date time.Time) *CompletedCourse {
 	return &CompletedCourse{
 		Username: username,
@@ -46,3 +51,9 @@ func NewCompletedExercise(username string, exerciseID string, date time.Time, sc
 	}
 }
 
+func NewMessage(body string, attributes map[string]interface{}) *Message {
+	return &Message{
+		Body:       body,
+		Attributes: attributes,
+	}
+}

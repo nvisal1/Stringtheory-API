@@ -1,6 +1,7 @@
 module Stringtheory-API
 
 require (
+	github.com/aws/aws-sdk-go v1.25.19 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
