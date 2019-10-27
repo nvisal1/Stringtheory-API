@@ -47,8 +47,37 @@ func (sqsMessageStore SQSMessageStore) sendMessage(message *Message) error {
 	return nil
 }
 
-func (sqsMessageStore SQSMessageStore) receiveMessage() (*Message, error) {
+func (sqsMessageStore SQSMessageStore) receiveMessages() (*Message, error) {
+	result, err := sqsMessageStore.client.ReceiveMessage(&sqs.ReceiveMessageInput{
+		AttributeNames: []*string{
+			aws.String(sqs.MessageSystemAttributeNameSentTimestamp),
+		},
+		MessageAttributeNames: []*string{
+			aws.String(sqs.QueueAttributeNameAll),
+		},
+		QueueUrl:            &sqsMessageStore.queueURL,
+		MaxNumberOfMessages: aws.Int64(1),
+		VisibilityTimeout:   aws.Int64(20),  // received message is invisible to other consumers for 20 seconds
+		WaitTimeSeconds:     aws.Int64(20), // enable long polling to reduce number of requests to SQS
+	})
 
+	if err != nil {
+		return nil, err
+	}
+
+	if len(result.Messages) == 0 {
+		return nil, nil
+	}
+
+	sqsMessage := result.Messages[0]
+	var attributes map[string]interface{}
+	for key, value := range sqsMessage.Attributes {
+		attributes[key] = value
+	}
+	message := NewMessage(*sqsMessage.Body, attributes)
+
+	return message, nil
 }
+
 
 
