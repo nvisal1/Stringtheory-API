@@ -1,6 +1,8 @@
 package interfaces
 
+import . "Stringtheory-API/user-curriculum-progress/types"
+
 type MessageStore interface {
-	SendMessage() error
-	ReceiveMessages() (string, error)
+	SendMessage(message *Message) error
+	ReceiveMessage() (*Message, error)
 }

@@ -1,12 +1,12 @@
 package interfaces
 
 import (
-	. "Stringtheory-API/shared"
+	"Stringtheory-API/shared"
 )
 
 type ServiceCommunicator interface {
-	GetCourse(courseID string) (Course, error)
-	GetExercise(exerciseID string) (Exercise, error)
-	GetLesson(lessonID string) (Lesson, error)
-	GetUser(username string) (User, error)
+	GetCourse(courseID string) (*shared.Course, error)
+	GetExercise(exerciseID string) (*shared.Exercise, error)
+	GetLesson(lessonID string) (*shared.Lesson, error)
+	GetUser(username string) (*shared.User, error)
 }

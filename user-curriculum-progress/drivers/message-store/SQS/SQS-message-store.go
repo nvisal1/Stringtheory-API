@@ -24,7 +24,7 @@ func NewSQSMessageStore(queueURL string) (*SQSMessageStore, error) {
     return &SQSMessageStore{client: sqs.New(session), queueURL: queueURL}, nil
 }
 
-func (sqsMessageStore SQSMessageStore) sendMessage(message *Message) error {
+func (sqsMessageStore SQSMessageStore) SendMessage(message *Message) error {
 	formattedAttributes := make(map[string]*sqs.MessageAttributeValue)
 	for key, value := range message.Attributes {
 		formattedAttributes[key] = &sqs.MessageAttributeValue{
@@ -47,7 +47,7 @@ func (sqsMessageStore SQSMessageStore) sendMessage(message *Message) error {
 	return nil
 }
 
-func (sqsMessageStore SQSMessageStore) receiveMessages() (*Message, error) {
+func (sqsMessageStore SQSMessageStore) ReceiveMessage() (*Message, error) {
 	result, err := sqsMessageStore.client.ReceiveMessage(&sqs.ReceiveMessageInput{
 		AttributeNames: []*string{
 			aws.String(sqs.MessageSystemAttributeNameSentTimestamp),

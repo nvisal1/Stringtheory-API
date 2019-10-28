@@ -2,6 +2,7 @@ package queue
 
 import (
 	."Stringtheory-API/user-curriculum-progress/service-module"
+	. "Stringtheory-API/user-curriculum-progress/types"
 	"sync"
 )
 
@@ -9,7 +10,7 @@ type QueueAdapter struct {
 	workerPoolSize int
 }
 
-func NewQueueAdapter(workerPoolSize int, queueURI string) *QueueAdapter {
+func NewQueueAdapter(workerPoolSize int) *QueueAdapter {
 	return &QueueAdapter{ workerPoolSize: workerPoolSize }
 }
 
@@ -21,19 +22,17 @@ func (adapter QueueAdapter) InitializeAdapter() {
 
 func (adapter QueueAdapter) spawnWorker() {
 	for {
-		messages, err := UserCurriculumProgressModule.MessageStore.ReceiveMessages()
+		message, err := UserCurriculumProgressModule.MessageStore.ReceiveMessage()
 		if err != nil {
 			// Skip to next iteration if there is no message
 			continue
 		}
 
 		var waitGroup sync.WaitGroup
-		for _, message := range messages {
-			waitGroup.Add(1)
-			go func(m string) {
+		waitGroup.Add(1)
+			go func(message *Message) {
 				defer waitGroup.Done()
 			}(message)
-			waitGroup.Wait()
-		}
+		waitGroup.Wait()
 	}
 }

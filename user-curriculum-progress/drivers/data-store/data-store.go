@@ -22,12 +22,12 @@ func (datastore ModuleMongoDataStore) CreateCompletedCourse(completedCourse *Com
 	return err
 }
 
-func (datastore ModuleMongoDataStore) CreateCompletedLesson(completedLesson CompletedLesson) error {
+func (datastore ModuleMongoDataStore) CreateCompletedLesson(completedLesson *CompletedLesson) error {
 	_, err := datastore.db.Collection("Completed-Lessons").InsertOne(context.TODO(), completedLesson)
 	return err
 }
 
-func (datastore ModuleMongoDataStore) CreateCompletedExercise(completedExercise CompletedExercise) error {
+func (datastore ModuleMongoDataStore) CreateCompletedExercise(completedExercise *CompletedExercise) error {
 	_, err := datastore.db.Collection("Completed-Exercises").InsertOne(context.TODO(), completedExercise)
 	return err
 }

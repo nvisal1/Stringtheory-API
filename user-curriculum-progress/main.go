@@ -5,8 +5,10 @@ import (
 	. "Stringtheory-API/user-curriculum-progress/adapter/http"
 	. "Stringtheory-API/user-curriculum-progress/adapter/queue"
 	. "Stringtheory-API/user-curriculum-progress/drivers/data-store"
+	. "Stringtheory-API/user-curriculum-progress/drivers/message-store/SQS"
 	. "Stringtheory-API/user-curriculum-progress/drivers/service-communication"
 	. "Stringtheory-API/user-curriculum-progress/service-module"
+	"os"
 )
 
 // InitializeModule is an exported function.
@@ -16,13 +18,16 @@ import (
 // determine whether or not to load test stubs or
 // production code.
 func InitializeModule() {
-	httpAdapter := NewHttpAdapter()
-	queueAdapter := NewQueueAdapter(50)
-	dataStore := NewDatastore(database.GetConnection().Db)
-	messageStore := NewMessageStore()
-	serviceCommunicator := NewServiceCommunicator()
+	queueURL, exists := os.LookupEnv("QUEUE_URL")
+	if exists {
+		httpAdapter := NewHttpAdapter()
+		queueAdapter := NewQueueAdapter(50)
+		dataStore := NewDatastore(database.GetConnection().Db)
+		messageStore, _ := NewSQSMessageStore(queueURL)
+		serviceCommunicator := NewServiceCommunicator()
 
-	NewUserCurriculumProgressModule(httpAdapter, queueAdapter, dataStore, messageStore, serviceCommunicator)
-	UserCurriculumProgressModule.HttpAdapter.InitializeAdapter()
-	UserCurriculumProgressModule.QueueAdapter.InitializeAdapter()
+		NewUserCurriculumProgressModule(httpAdapter, queueAdapter, dataStore, messageStore, serviceCommunicator)
+		UserCurriculumProgressModule.HttpAdapter.InitializeAdapter()
+		UserCurriculumProgressModule.QueueAdapter.InitializeAdapter()
+	}
 }
