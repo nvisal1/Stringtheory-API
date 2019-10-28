@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3dc63c60-7f61-49d3-8fae-5bcfadd0765d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/adapter/queue/queue-adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/adapter/queue/queue-adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/drivers/data-store/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/data-store/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/drivers/message-store/SQS/SQS-message-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/message-store/SQS/SQS-message-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/drivers/service-communication/service-communicator.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/drivers/service-communication/service-communicator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/interfaces/data-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/data-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/interfaces/message-store.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/message-store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/interfaces/service-communication.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/interfaces/service-communication.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-exercise/complete-exercise.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-exercise/complete-exercise.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-lesson/complete-lesson.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-curriculum-progress/usecases/complete-lesson/complete-lesson.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
